@@ -15,6 +15,23 @@ body {
   background-color: darkgrey;
 }
 
+.card-footer {
+  background-color: #8EE8B8;
+}
+
+.navLogo {
+  margin-top: 2%;
+}
+
+.logo{
+  width: 30%;
+  height: auto;
+}
+
+.list-group {
+  margin-top: 10%;
+}
+
 .homeItems {
-  color: #8EE8B8;
+  color: #62AA5D;
 }

@@ -3,12 +3,10 @@
 <?php ?>
 <html>
 <div class="container">
-
     <div class="row">
 
         <div class="col-lg-3">
 
-            <h1 class="my-4">Shop Name</h1>
             <div class="list-group">
                 <a href="#" class="list-group-item">Category 1</a>
                 <a href="#" class="list-group-item">Category 2</a>
@@ -60,7 +58,6 @@
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
                         </div>
                         <div class="card-footer">
-                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                         </div>
                     </div>
                 </div>
@@ -75,8 +72,7 @@
                             <h5>$24.99</h5>
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
                         </div>
-                        <div class="card-footer" id="footer">
-                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                        <div class="card-footer">
                         </div>
                     </div>
                 </div>
@@ -86,7 +82,7 @@
                         <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
                         <div class="card-body">
                             <h4 class="card-title">
-                                <a href="#">Item Three</a>
+                                <a href="#" class="homeItems">Item Three</a>
                             </h4>
                             <h5>$24.99</h5>
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
@@ -102,13 +98,12 @@
                         <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
                         <div class="card-body">
                             <h4 class="card-title">
-                                <a href="#">Item Four</a>
+                                <a href="#" class="homeItems">Item Four</a>
                             </h4>
                             <h5>$24.99</h5>
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
                         </div>
                         <div class="card-footer">
-                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                         </div>
                     </div>
                 </div>
@@ -118,13 +113,12 @@
                         <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
                         <div class="card-body">
                             <h4 class="card-title">
-                                <a href="#">Item Five</a>
+                                <a href="#" class="homeItems">Item Five</a>
                             </h4>
                             <h5>$24.99</h5>
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
                         </div>
                         <div class="card-footer">
-                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                         </div>
                     </div>
                 </div>
@@ -134,13 +128,12 @@
                         <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
                         <div class="card-body">
                             <h4 class="card-title">
-                                <a href="#">Item Six</a>
+                                <a href="#" class="homeItems">Item Six</a>
                             </h4>
                             <h5>$24.99</h5>
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
                         </div>
                         <div class="card-footer">
-                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                         </div>
                     </div>
                 </div>
