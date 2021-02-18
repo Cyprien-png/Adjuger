@@ -32,22 +32,33 @@
         <div class="col-logo">
           <a href="home.php"> <img class="logo" src="content\\images\\Logo.png" alt=""> 
         </div>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link text-secondary" href="#">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-secondary" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-secondary" href="#">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-secondary" href="#">Contact</a>
-          </li>
-        </ul>
+
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" class="bi" fill="currentColor" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path>
+            </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" class="bi" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          </button>
+          <div class="navbar-collapse collapse" id="bdNavbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active col-md-auto">
+              <a class="nav-link text-secondary" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item col-md-auto">
+              <a class="nav-link text-secondary" href="#">About</a>
+            </li>
+            <li class="nav-item col-md-auto">
+              <a class="nav-link text-secondary" href="#">Services</a>
+            </li>
+            <li class="nav-item col-md-auto">
+              <a class="nav-link text-secondary" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </nav>
@@ -57,7 +68,7 @@
 <!-- Footer -->
   <footer class="py-5" id="footer">
       <div class="container" >
-          <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+          <p class="m-0 text-center text-white">Copyright &copy; Adjuger 2021</p>
       </div>
     <!-- /.container -->
   </footer>
