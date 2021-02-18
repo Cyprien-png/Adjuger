@@ -1,0 +1,2 @@
+La classe : class="navbar-toggler" bloque la liste déroulante.. 
+à verifier si elle est là pour gérer l'accès tel ou PC
