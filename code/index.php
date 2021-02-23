@@ -9,9 +9,9 @@ if (isset($_GET['action'])) {
         case 'home':
             home();
             break;
-//        case 'register':
-//            register($_POST);
-//            break;
+        case 'register':
+            register($_POST);
+            break;
 //        case 'login':
 //            login($_POST);
 //            break;
