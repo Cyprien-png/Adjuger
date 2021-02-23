@@ -1,5 +1,3 @@
-<?php?>
-
 <html lang="en">
 
 <head>
@@ -9,56 +7,60 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Shop Homepage - Start Bootstrap Template</title>
+    <title><?=$title;?></title>
 
   <!-- Bootstrap core CSS -->
-  <link href="content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="view/content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="content/css/shop-homepage.css" rel="stylesheet">
+  <link href="view/content/css/shop-homepage.css" rel="stylesheet">
 
 </head>
 
-<body>
+    <body>
 
-  <!-- Navigation -->
+      <!-- Navigation -->
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-    <a class="navbar-brand" href="home.php" <img class="logo" src="content\\images\\Logo.png" alt=""></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="home.php"> <img class="logo" src="view/content/images/Logo.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    <div class="collapse navbar-collapse" id="navbarResponsive">
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <div class="collapse navbar-collapse" id="navbarResponsive">
 
-    <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    <ul class="navbar-nav ml-auto">
-            <li class="nav-item active col-md-auto">
-              <a class="nav-link text-secondary" href="#">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item col-md-auto">
-              <a class="nav-link text-secondary" href="#">About</a>
-            </li>
-            <li class="nav-item col-md-auto">
-              <a class="nav-link text-secondary" href="#">Services</a>
-            </li>
-            <li class="nav-item col-md-auto">
-              <a class="nav-link text-secondary" href="#">Contact</a>
-            </li>
-          </ul>
-      
-    </div>
-  </div>
-</nav>
+                  <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                  </form>
+
+                <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active col-md-auto">
+                          <a class="nav-link text-secondary" href="#">Home
+                            <span class="sr-only">(current)</span>
+                          </a>
+                        </li>
+                        <li class="nav-item col-md-auto">
+                          <a class="nav-link text-secondary" href="#">About</a>
+                        </li>
+                        <li class="nav-item col-md-auto">
+                          <a class="nav-link text-secondary" href="#">Services</a>
+                        </li>
+                        <li class="nav-item col-md-auto">
+                          <a class="nav-link text-secondary" href="#">Contact</a>
+                        </li>
+                      </ul>
+                </div>
+            </div>
+        </div>
+      </nav>
 
 
+      <!-- ----- CONTENT ----- -->
+      <?=$content; ?>
+      <!-- ----- END CONTENT ----- -->
 <!--
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
@@ -136,28 +138,27 @@
   </nav>
 -->
 
-  <div class="pos-f-t">
-  <div class="collapse" id="navbarToggleExternalContent">
-    <div class="bg-dark p-4">
-      <h5 class="text-white h4">Collapsed content</h5>
-      <span class="text-muted">Toggleable via the navbar brand.</span>
-    </div>
-  </div>
-
-    <?php require "home.php" ?>
-
-<!-- Footer -->
-  <footer class="py-5" id="footer">
-      <div class="container" >
-          <p class="m-0 text-center text-white">Copyright &copy; Adjuger 2021</p>
+      <div class="pos-f-t">
+      <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-dark p-4">
+          <h5 class="text-white h4">Collapsed content</h5>
+          <span class="text-muted">Toggleable via the navbar brand.</span>
+        </div>
       </div>
-    <!-- /.container -->
-  </footer>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="content/vendor/jquery/jquery.min.js"></script>
-  <script src="content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-</body>
+    <!-- Footer -->
+      <footer class="py-5" id="footer">
+          <div class="container" >
+              <p class="m-0 text-center text-white">Copyright &copy; Adjuger 2021</p>
+          </div>
+        <!-- /.container -->
+      </footer>
+
+      <!-- Bootstrap core JavaScript -->
+      <script src="content/vendor/jquery/jquery.min.js"></script>
+      <script src="content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    </body>
 
 </html>
