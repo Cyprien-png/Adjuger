@@ -19,6 +19,10 @@ body {
   background-color: #8EE8B8;
 }
 
+#bouton{
+  float: right !important; 
+}
+
 .navLogo {
   margin-top: 2%;
 }

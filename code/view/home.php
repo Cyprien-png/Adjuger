@@ -1,7 +1,8 @@
-<!-- Page Content -->
+<?php
+$title = "Accueil";
+ob_start();
+?>
 
-<?php ?>
-<html>
 <div class="container">
     <div class="row">
 
@@ -150,4 +151,7 @@
 </div>
 <!-- /.container -->
 
-</html>
+
+<?php
+$content = ob_get_clean();
+require "view/gabarit.php";
