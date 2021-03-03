@@ -1,34 +1,35 @@
 <html lang="en">
 
-<head>
-<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-  <title><?=$title;?></title>
+        <title><?=$title;?></title>
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="view/content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="view/content/css/shop-homepage.css" rel="stylesheet">
-
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<style>
-    .bs-example{
-        margin: 20px;
-    }
-</style>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="view/content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="view/content/css/style_homepage.css" rel="stylesheet">
 
 
-    
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <style>
+            .bs-example{
+                margin: 20px;
+            }
+        </style>
 
-  <!-- Bootstrap core CSS -->
- 
 
-</head>
+
+
+      <!-- Bootstrap core CSS -->
+
+
+    </head>
 
     <body>
 <!--

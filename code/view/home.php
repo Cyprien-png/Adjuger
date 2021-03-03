@@ -3,6 +3,10 @@ $title = "Accueil";
 ob_start();
 ?>
 
+<head>
+    <link href="view/content/css/style_homepage.css" rel="stylesheet">
+</head>
+
 <div class="container">
     <div class="row">
 

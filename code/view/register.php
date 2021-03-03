@@ -2,6 +2,12 @@
 $title = "Créer un compte";
 ob_start();
 ?>
+
+<head>
+    <link href="view/content/css/style_register.css" rel="stylesheet">
+    <script type="text/javascript" src="view/content/js/signUp.js"></script>
+</head>
+
 <div class="container">
 
     <h3 class="hidden" id="txtRegisterSuccess">Inscription validée !</h3>
