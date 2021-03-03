@@ -49,17 +49,14 @@ body {
 
 .drop{
  justify-content: space-evenly;
+  width: 30%;
+  height: auto;
 }
 
 .list-group {
   margin-top: 10%;
 }
 
-
 .homeItems {
   color: #62AA5D;
-}
-
-.container{
-  justify-content: space-evenly;
 }
