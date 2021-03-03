@@ -13,7 +13,7 @@ ob_start();
     <h3 class="hidden" id="txtRegisterSuccess">Inscription validée !</h3>
     <p>*Obligatoire</p>
 
-    <form id="frmSign">
+    <form id="frmSign" method="post" action="index.php?action=register">
 
         <label for="txtEmail">E-Mail* : </label>
         <input type="email" id="txtEmail" name="userInputEmail" required>
