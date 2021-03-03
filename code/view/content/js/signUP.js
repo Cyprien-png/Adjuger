@@ -3,7 +3,7 @@ $(document).ready(function() {
         var dataString = $(this).serialize();
         $.ajax({
             type: "POST",
-            url: "controler/controler.php",
+            url: "index.php?action=register",
             data: dataString,
             success: function () {
                 //alert("OK" + " " + txtFirstname.value);

@@ -5,6 +5,15 @@ function home() {
 }
 
 function register($userData) {
-    require "view/register.php";
+    require_once "model/userManager.php";
+    if(isset($userData['userInputEmail'])) {
+        registerInDatabase($userData);
+        //require "view/register.php";
+    }
+    else {
+        require "view/register.php";
+    }
 }
+
+
 

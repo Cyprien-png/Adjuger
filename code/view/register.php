@@ -16,25 +16,25 @@ ob_start();
     <form id="frmSign">
 
         <label for="txtEmail">E-Mail* : </label>
-        <input type="email" id="txtEmail" name="registerEmail" required>
+        <input type="email" id="txtEmail" name="userInputEmail" required>
 
         <label for="txtUsername">Nom d'utilisateur* : </label>
-        <input type="text" id="txtUsername" name="registerUsername" required>
+        <input type="text" id="txtUsername" name="userInputUsername" required>
 
         <label for="txtPassword">Mot de passe* : </label>
-        <input type="text" id="txtPassword" name="registerPassword" required>
+        <input type="text" id="txtPassword" name="userInputPassword" required>
 
         <label for="txtLastname">Nom* : </label>
-        <input type="text" id="txtLastname" name="registerLastname" required>
+        <input type="text" id="txtLastname" name="userInputLastname" required>
 
         <label for="txtFirstname">Prénom* : </label>
-        <input type="text" id="txtFirstname" name="registerFirstname" required>
+        <input type="text" id="txtFirstname" name="userInputFirstname" required>
 
         <label for="dteBirth">Date de naissance : </label>
-        <input type="date" id="dteBirth" name="registerDate">
+        <input type="date" id="dteBirth" name="userInputDate">
 
-        <label for="txtPhoneNumber">N° de téléphone : </label>
-        <input type="text" id="txtPhoneNumber" name="registerPhoneNumber" required>
+        <label for="txtPhoneNumber">N° de téléphone* : </label>
+        <input type="text" id="txtPhoneNumber" name="userInputPhoneNumber" required>
 
         <input type="submit" value="S'inscrire" id="btnSubmitSign">
 
