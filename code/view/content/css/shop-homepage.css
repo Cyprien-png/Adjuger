@@ -27,6 +27,10 @@ body {
   margin-top: 2%;
 }
 
+.navbar{
+  justify-content: space-evenly;
+}
+
 .logo{
   position: relative;
   width: 20%;
@@ -34,6 +38,9 @@ body {
 }
 .col-logo{
  
+}
+.col-btncoll{
+  float: right;
 }
 
 .navbar{

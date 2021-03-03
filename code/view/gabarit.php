@@ -1,23 +1,92 @@
 <html lang="en">
 
 <head>
-
-  <meta charset="utf-8">
+<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
 
-    <title><?=$title;?></title>
+  <title><?=$title;?></title>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="view/content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="view/content/css/shop-homepage.css" rel="stylesheet">
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style>
+    .bs-example{
+        margin: 20px;
+    }
+</style>
+
+
+    
 
   <!-- Bootstrap core CSS -->
-  <link href="view/content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
-  <link href="view/content/css/shop-homepage.css" rel="stylesheet">
+ 
 
 </head>
 
     <body>
+<!--
+    <div class="bs-example">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a href="#" class="navbar-brand">
+            <img src="view/content/images/Logo.svg" height="28" alt="Adjuger">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <a href="#" class="nav-item nav-link active">Home</a>
+                <a href="#" class="nav-item nav-link">Profile</a>
+                <a href="#" class="nav-item nav-link">Messages</a>
+                <a href="#" class="nav-item nav-link disabled" tabindex="-1">Reports</a>
+            </div>
+            <div class="navbar-nav ml-auto">
+                <a href="#" class="nav-item nav-link">Login</a>
+            </div>
+        </div>
+    </nav>
+</div>
+-->
+
+
+
+<nav class="navbar navbar-expand-lg fixed-top " id="header">
+    <div class="container">
+        <nav class="navbar navbar-expand-md navbar-light">
+          <div class="col-logo">
+            <a href="#" class="navbar-brand">
+                <img src="view/content/images/Logo.svg" height="28" alt="Adjuger">
+            </a>
+          </div>
+          <div col-btncoll>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <div class="navbar-nav">
+                <a href="#" class="nav-item nav-link active">Home</a>
+                <a href="#" class="nav-item nav-link">Profile</a>
+                <a href="#" class="nav-item nav-link">Messages</a>
+                <a href="#" class="nav-item nav-link disabled" tabindex="-1">Reports</a>
+              </div>
+             
+              <div class="navbar-nav ml-auto">
+                <a href="#" class="nav-item nav-link">Login</a>
+              </div>
+              </div>
+            </div>
+        </nav>
+    </div>
+  </nav>
 
       <!-- Navigation 
 
@@ -57,10 +126,13 @@
         </div>
       </nav>
 -->
+<!--
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top " id="header">
   <div class="container">
-      <div>
-        <a class="navbar-brand" href="home.php"> <img class="logo" src="view/content/images/Logo.png" alt=""></a>
+      <div class ="row">
+       <a href="#" class="">
+            <img class="logo" src="view/content/images/Logo.svg" alt="">  
+        </a>
       </div>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <form>
@@ -101,8 +173,8 @@
     </div>
   </div>
 </nav>
+-->
 
-      <!-- ----- CONTENT ----- -->
       <?=$content; ?>
       <!-- 
 
@@ -143,7 +215,7 @@
       </div>
     </div>
   </nav>
--->
+
 
       <div class="pos-f-t">
       <div class="collapse" id="navbarToggleExternalContent">
