@@ -12,9 +12,9 @@ if (isset($_GET['action'])) {
         case 'register':
             register($_POST);
             break;
-//        case 'login':
-//            login($_POST);
-//            break;
+        case 'login':
+            login($_POST);
+            break;
         default:
             home();
     }

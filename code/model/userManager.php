@@ -24,6 +24,7 @@ function registerInDatabase($userData) {
  * @return bool True if the file writing succeeds or false if it fails
  * */
 // NOT TOTALLY WORKING
+// DUMBLY APPENDS DATA IN THE JSON FILE
 function insertData($data, $file) {
     $fileHandler = fopen($file, "a");
     $text = "$data \n";
