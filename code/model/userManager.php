@@ -60,4 +60,8 @@ function prepareDataArray($userData) {
     return $dataArray;
 }
 
+function checkLogin($userData) {
+
+}
+
 

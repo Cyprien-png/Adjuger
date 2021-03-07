@@ -81,7 +81,7 @@
               </div>
              
               <div class="navbar-nav ml-auto">
-                <a href="#" class="nav-item nav-link">Login</a>
+                <a href="index.php?action=login" class="nav-item nav-link">Login</a>
               </div>
               </div>
             </div>

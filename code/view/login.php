@@ -8,9 +8,6 @@ ob_start();
         <script type="text/javascript" src="view/js/signUp.js"></script>
     </head>
 
-    <h3 class="hidden" id="txtRegisterSuccess">Inscription validée !</h3>
-    <p>*Obligatoire</p>
-
     <div class="container">
 
         <form id="frmLogin" method="post" action="index.php?action=login">
@@ -24,6 +21,9 @@ ob_start();
             <input type="submit" value="Se connecter" id="btnSubmitSign">
 
         </form>
+
+        <p>Pas de compte ? <a href="index.php?action=register">S'inscrire</a></p>
+
     </div>
 
 <?php

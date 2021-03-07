@@ -15,10 +15,10 @@ function register($userData) {
     }
 }
 
-function login() {
+function login($userData) {
     require_once "model/userManager.php";
     if(isset($userData['userInputAuth'])) {
-        registerInDatabase($userData);
+        checkLogin($userData);
         require "view/login.php";
     }
     else {
