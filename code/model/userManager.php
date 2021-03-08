@@ -48,20 +48,59 @@ function insertData($data, $file) {
 function prepareDataArray($userData) {
     $userHashedPassword = password_hash($userData['userInputPassword'], PASSWORD_DEFAULT);
     $dataArray = array(
-        "E-Mail" => $userData['userInputEmail'],
-        "Username" => $userData['userInputUsername'],
-        "Password" => $userHashedPassword,
-        "Firstname" => $userData['userInputUsername'],
-        "Lastname" => $userData['userInputLastname'],
+        "e-mail" => $userData['userInputEmail'],
+        "username" => $userData['userInputUsername'],
+        "password" => $userHashedPassword,
+        "firstname" => $userData['userInputUsername'],
+        "lastname" => $userData['userInputLastname'],
         "birthdate" => $userData['userInputDate'],
-        "Phone number" => $userData['userInputPhoneNumber'],
+        "phone number" => $userData['userInputPhoneNumber']
     );
 
     return $dataArray;
 }
 
+// NOT READY
 function checkLogin($userData) {
+    $check = false;
 
+    $userAuth = $userData['userInputAuth'];
+    $bd = file_get_contents("data/users.json");
+
+    //$DBPsw = searchInDB($bd, "users", "password");
+    $userPsw = password_verify("temp", $userData['userInputPassword']);
+
+
+
+    $checkUsername = searchInDB($bd, "users", "username", $userAuth, 1);
+    $checkEmail = searchInDB($bd, "users", "e-mail", $userAuth, 1);
+
+//    if($checkUsername && $checkEmail) {
+//
+//    }
+
+    $json = json_decode($bd);
+
+    return $check;
 }
 
+function searchInDB($str, $table, $toMatch, $match, $mode) {
+    $result = false;
+    $json = json_decode($str);
+
+    foreach ($json->$table as $item) {
+        if ($item->$toMatch == $match) {
+            switch ($mode) {
+                case 0:
+                    $result = $item->content;
+                    break;
+                case 1:
+                    $result = true;
+                    break;
+            }
+        }
+    }
+
+    return $result;
+}
 
