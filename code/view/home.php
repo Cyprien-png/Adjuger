@@ -4,7 +4,7 @@ ob_start();
 ?>
 
 <head>
-    <link href="view/content/css/style_homepage.css" rel="stylesheet">
+    <link href="css/style_homepage.css" rel="styles heet">
 </head>
 
 <div class="container">
