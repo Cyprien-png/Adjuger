@@ -2,8 +2,10 @@
 /**
  * @author MUMINOVIC Benjamin
  * @creation-date 03.03.2021
- * @description Contains all the function to access or modify the json database
- * @modification
+ * @description Contains all the function to access or modify the json users file
+ * @modification 05.03.2021 : Started login functionality
+ *               10.03.2021 : Fixed the user appending in the json users file
+ *                            Completed the login functionality. Added comments
  *
  * */
 
@@ -23,15 +25,18 @@ function registerInDatabase($userData) {
  * @description Function used to append the data into the json file
  * @return bool True if the file writing succeeds or false if it fails
  * */
-// NOT TOTALLY WORKING
-// DUMBLY APPENDS DATA IN THE JSON FILE
+// /!\ Still doesn't verify if the user already exists in the database
 function insertData($data, $file) {
-    $fileHandler = fopen($file, "a");
-    $text = "$data \n";
-    $success = fwrite($fileHandler, $text);
-    fclose($fileHandler);
+    $currentDataFile = file_get_contents($file);
+    $currentData = json_decode($currentDataFile, true);
 
-    // fwrite doesn't return true on success, only false on fail
+    $newData = json_decode($data, true);
+    array_push($CurrentData, $newData);
+
+    $finalData = json_encode($currentData, JSON_PRETTY_PRINT);
+    $success = file_put_contents($file, $finalData);
+
+    // file_put_contents() doesn't return true on success, only false on fail
     // this returns true if it doesn't fail
     if($success != false) {
         return true;
@@ -60,44 +65,40 @@ function prepareDataArray($userData) {
     return $dataArray;
 }
 
-// NOT READY
+/**
+ * @description Checks
+ * @return bool True if the account exists and the pseudo/e-mail matches with the password. False if it doesn't
+ * */
 function checkLogin($userData) {
     $check = false;
 
     $userAuth = $userData['userInputAuth'];
-    $bd = file_get_contents("data/users.json");
+    $db = file_get_contents("data/users.json");
 
-    //$DBPsw = searchInDB($bd, "users", "password");
-    $userPsw = password_verify("temp", $userData['userInputPassword']);
+    $json = json_decode($db, true);
+    $userPsw = password_verify($userData['userInputPassword'], $json['users']['0']['password']);
 
+    $checkUsername = searchUser($db, "username", $userAuth);
+    $checkEmail = searchUser($db, "e-mail", $userAuth);
 
-
-    $checkUsername = searchInDB($bd, "users", "username", $userAuth, 1);
-    $checkEmail = searchInDB($bd, "users", "e-mail", $userAuth, 1);
-
-//    if($checkUsername && $checkEmail) {
-//
-//    }
-
-    $json = json_decode($bd);
+    if (($checkUsername || $checkEmail) && $userPsw) {
+        $check = true;
+    }
 
     return $check;
 }
 
-function searchInDB($str, $table, $toMatch, $match, $mode) {
+/**
+ * @description Searches the json file to find an existing user
+ * @return bool True if the user exits. False if it doesn't
+ * */
+function searchUser($str, $toMatch, $match) {
     $result = false;
     $json = json_decode($str);
 
-    foreach ($json->$table as $item) {
+    foreach ($json->users as $item) {
         if ($item->$toMatch == $match) {
-            switch ($mode) {
-                case 0:
-                    $result = $item->content;
-                    break;
-                case 1:
-                    $result = true;
-                    break;
-            }
+            $result = true;
         }
     }
 

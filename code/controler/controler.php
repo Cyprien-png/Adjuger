@@ -7,8 +7,12 @@ function home() {
 function register($userData) {
     require_once "model/userManager.php";
     if(isset($userData['userInputEmail'])) {
-        registerInDatabase($userData);
-        require "view/home.php";
+        if(registerInDatabase($userData)) {
+            require "view/home.php";
+        }
+        else {
+            require "view/register.php";
+        }
     }
     else {
         require "view/register.php";
@@ -18,8 +22,13 @@ function register($userData) {
 function login($userData) {
     require_once "model/userManager.php";
     if(isset($userData['userInputAuth'])) {
-        checkLogin($userData);
-        require "view/login.php";
+        if(checkLogin($userData)) {
+            require "view/home.php";
+        }
+        else {
+            require "view/login.php";
+        }
+
     }
     else {
         require "view/login.php";
