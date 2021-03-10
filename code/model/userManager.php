@@ -26,10 +26,22 @@ function registerInDatabase($userData) {
 // NOT TOTALLY WORKING
 // DUMBLY APPENDS DATA IN THE JSON FILE
 function insertData($data, $file) {
-    $fileHandler = fopen($file, "a");
-    $text = "$data \n";
-    $success = fwrite($fileHandler, $text);
-    fclose($fileHandler);
+    $currentData = file_get_contents($file);
+    $DcurrentData = json_decode($currentData, true);
+
+    $Dnewdata = json_decode($data, true);
+
+    array_push($DcurrentData, $Dnewdata);
+
+    $DfinalData = json_encode($DcurrentData, JSON_PRETTY_PRINT);
+    $success =  file_put_contents($file, $DfinalData);
+
+
+
+//    $fileHandler = fopen($file, "a");
+//    $text = "$data \n";
+//    $success = fwrite($fileHandler, $text);
+//    fclose($fileHandler);
 
     // fwrite doesn't return true on success, only false on fail
     // this returns true if it doesn't fail

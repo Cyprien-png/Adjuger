@@ -7,8 +7,12 @@ function home() {
 function register($userData) {
     require_once "model/userManager.php";
     if(isset($userData['userInputEmail'])) {
-        registerInDatabase($userData);
-        require "view/home.php";
+        if(registerInDatabase($userData)) {
+            require "view/home.php";
+        }
+        else {
+            require "view/register.php";
+        }
     }
     else {
         require "view/register.php";
