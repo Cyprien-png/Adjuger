@@ -1,0 +1,26 @@
+{
+  "users" : [
+    {
+      "e-mail": "a@a.a",
+      "username": "a",
+      "password": "$2y$10$P7pm9DPWqUxDO1K2C.0LWu9hwX5F.TN.ME.2anCyoHNkbdd5\/8Ggi",
+      "firstname": "a",
+      "lastname": "a",
+      "birthdate": "2021-03-04",
+      "phone number": "111"
+    },
+    {
+      "e-mail": "b@b.b",
+      "username": "b",
+      "password": "$2y$10$P7pm9DPWqUxDO1K2C.0LWu9hwX5F.TN.ME.2anCyoHNkbdd5\/8Ggi",
+      "firstname": "a",
+      "lastname": "a",
+      "birthdate": "2021-03-04",
+      "phone number": "111"
+    }
+
+  ]
+}
+
+
+

@@ -60,44 +60,33 @@ function prepareDataArray($userData) {
     return $dataArray;
 }
 
-// NOT READY
+
 function checkLogin($userData) {
     $check = false;
 
     $userAuth = $userData['userInputAuth'];
-    $bd = file_get_contents("data/users.json");
+    $db = file_get_contents("data/users.json");
 
-    //$DBPsw = searchInDB($bd, "users", "password");
-    $userPsw = password_verify("temp", $userData['userInputPassword']);
+    $json = json_decode($db, true);
+    $userPsw = password_verify($userData['userInputPassword'], $json['users']['0']['password']);
 
+    $checkUsername = searchUser($db, "username", $userAuth);
+    $checkEmail = searchUser($db, "e-mail", $userAuth);
 
-
-    $checkUsername = searchInDB($bd, "users", "username", $userAuth, 1);
-    $checkEmail = searchInDB($bd, "users", "e-mail", $userAuth, 1);
-
-//    if($checkUsername && $checkEmail) {
-//
-//    }
-
-    $json = json_decode($bd);
+    if (($checkUsername || $checkEmail) && $userPsw) {
+        $check = true;
+    }
 
     return $check;
 }
 
-function searchInDB($str, $table, $toMatch, $match, $mode) {
+function searchUser($str,  $toMatch, $match) {
     $result = false;
     $json = json_decode($str);
 
-    foreach ($json->$table as $item) {
+    foreach ($json->users as $item) {
         if ($item->$toMatch == $match) {
-            switch ($mode) {
-                case 0:
-                    $result = $item->content;
-                    break;
-                case 1:
-                    $result = true;
-                    break;
-            }
+            $result = true;
         }
     }
 
