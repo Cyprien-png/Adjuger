@@ -31,30 +31,77 @@
 
 <body>
   <nav class="navbar navbar-expand-lg fixed-top " id="header">
-    <div class="container">
-      <nav class="navbar navbar-expand-md navbar-light">
-        <div class="col-logo">
-          <a href="action=home" class="navbar-brand">
-            <img src="view/content/images/Logo.svg" height="28" alt="Adjuger">
-          </a>
-        </div>
-        <div col-btncoll>
+    <!-- <div class="container row">
+
+
+
+      <div class="col">
+        <a href="action=home" class="navbar-brand">
+          <img src="view/content/images/Logo.svg" height="28" alt="Adjuger">
+        </a>
+      </div>
+
+
+
+      <div class="col-md-auto col-auto">
+      <div class=" col-2 col-btncoll">
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
 
           <div class="collapse navbar-collapse" id="navbarCollapse">
+            <form class="form-inline my-2 my-lg-0 ">
+              <input class="form-control " type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
             <div class="navbar-nav">
-              <a href="#" class="nav-item nav-link active">Home</a>
-              <a href="#" class="nav-item nav-link">Profile</a>
-              <a href="#" class="nav-item nav-link">Messages</a>
-              <a href="#" class="nav-item nav-link disabled" tabindex="-1">Reports</a>
-            </div>
-
-            <div class="navbar-nav ml-auto">
-              <a href="index.php?action=login" class="nav-item nav-link">Login</a>
+              <a href="#" class="nav-item nav-link active">Accueil</a>
+              <a href="#" class="nav-item nav-link">Contacter</a>
             </div>
           </div>
+          
+          </div>
+        </div>
+
+
+
+      <div class="col-2  col-lg-2 >
+        <div class="navbar-nav">
+          <a href="index.php?action=login" class="nav-item nav-link">Login</a>
+        </div>
+      </div>
+    </div> -->
+    <div class="container row">
+      <nav class="navbar navbar-expand-md navbar-light col-12">
+        <div class="col-auto">
+          <a href="action=home" class="navbar-brand">
+            <img src="view/content/images/Logo.svg" height="28" alt="Adjuger">
+          </a>
+        </div>
+
+        <form class="form-inline my-2 my-lg-0 col-sm-6 col-8">
+          <input class="form-control col-8" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0 col-5" type="submit">Search</button>
+        </form>
+
+
+        <div class=" col-sm-5 col-auto col-btncoll">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+
+
+
+            <div class="navbar-nav">
+              <a href="#" class="nav-item nav-link active">Accueil</a>
+              <a href="#" class="nav-item nav-link">Contacter</a>
+              <a href="#" class="nav-item nav-link">login</a>
+            </div>
+          </div>
+
+
         </div>
       </nav>
     </div>
@@ -63,7 +110,7 @@
   <?= $content; ?>
 
 
-    <!-- Footer -->
+  <!-- Footer -->
   <footer class="py-5" id="footer">
     <div class="container">
       <p class="m-0 text-center text-white">Copyright &copy; Adjuger 2021</p>

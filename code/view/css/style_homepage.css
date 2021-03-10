@@ -11,6 +11,7 @@ body {
   background-color: #8EE8B8;
 }
 
+
 #footer {
   background-color: darkgrey;
 }
@@ -37,7 +38,7 @@ body {
   height: auto; 
 }
 .col-logo{
- 
+ align-items: center;
 }
 .col-btncoll{
   float: right;
