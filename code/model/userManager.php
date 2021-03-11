@@ -14,24 +14,45 @@
  * @return bool True if the insert succeeds or False if it fails
  * */
 function registerInDatabase($userData) {
-    $dataArray = prepareDataArray($userData);
-    $encodedData = json_encode($dataArray, JSON_PRETTY_PRINT);
-    $success = insertData($encodedData, "data/users.json");
-
+    if (verifyRegister($userData)) {
+        $dataArray = prepareDataArray($userData);
+        $encodedData = json_encode($dataArray, JSON_PRETTY_PRINT);
+        $success = insertData($encodedData, "data/users.json");
+    }
+    else {
+        $success = false;
+    }
     return $success;
+}
+
+function verifyRegister($userData) {
+    $result = false;
+    $db = file_get_contents("data/users.json");
+
+
+
+    $searchUsername =  searchUser($db, "username", $userData['userInputUsername']);
+    $searchEmail = searchUser($db, "e-mail", $userData['userInputEmail']);
+
+    if(($searchEmail == false) && ($searchUsername == false)) {
+        if($userData['userInputPassword'] == $userData['userInputPasswordRepeat']) {
+            $result = true;
+        }
+    }
+
+    return $result;
 }
 
 /**
  * @description Function used to append the data into the json file
  * @return bool True if the file writing succeeds or false if it fails
  * */
-// /!\ Still doesn't verify if the user already exists in the database
 function insertData($data, $file) {
     $currentDataFile = file_get_contents($file);
     $currentData = json_decode($currentDataFile, true);
 
     $newData = json_decode($data, true);
-    array_push($CurrentData, $newData);
+    array_push($currentData['users'], $newData);
 
     $finalData = json_encode($currentData, JSON_PRETTY_PRINT);
     $success = file_put_contents($file, $finalData);
@@ -55,11 +76,7 @@ function prepareDataArray($userData) {
     $dataArray = array(
         "e-mail" => $userData['userInputEmail'],
         "username" => $userData['userInputUsername'],
-        "password" => $userHashedPassword,
-        "firstname" => $userData['userInputUsername'],
-        "lastname" => $userData['userInputLastname'],
-        "birthdate" => $userData['userInputDate'],
-        "phone number" => $userData['userInputPhoneNumber']
+        "password" => $userHashedPassword
     );
 
     return $dataArray;
@@ -76,7 +93,7 @@ function checkLogin($userData) {
     $db = file_get_contents("data/users.json");
 
     $json = json_decode($db, true);
-    $userPsw = password_verify($userData['userInputPassword'], $json['users']['0']['password']);
+    $userPsw = password_verify($userData['userInputPassword'], $json['users']['password']);
 
     $checkUsername = searchUser($db, "username", $userAuth);
     $checkEmail = searchUser($db, "e-mail", $userAuth);
@@ -92,9 +109,9 @@ function checkLogin($userData) {
  * @description Searches the json file to find an existing user
  * @return bool True if the user exits. False if it doesn't
  * */
-function searchUser($str, $toMatch, $match) {
+function searchUser($jsonArray, $toMatch, $match) {
     $result = false;
-    $json = json_decode($str);
+    $json = json_decode($jsonArray);
 
     foreach ($json->users as $item) {
         if ($item->$toMatch == $match) {
