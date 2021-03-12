@@ -3,7 +3,7 @@
  * Copyright 2013-2020 Start Bootstrap
  * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-shop-homepage/blob/master/LICENSE)
  */
-body {
+ body {
   padding-top: 56px;
 }
 
@@ -11,6 +11,14 @@ body {
   background-color: #8EE8B8;
 }
 
+.img-fluid{
+  max-width: 100%;
+  height: auto;
+}
+
+td{
+  padding-right: 15px;
+}
 
 #footer {
   background-color: darkgrey;
