@@ -10,25 +10,33 @@
  * */
 
 /**
- * @description Calls all the needed functions to insert the user data into the json database
- * @return bool True if the insert succeeds or False if it fails
+ * @description Calls all the needed functions to insert the user data into the json users file
+ * @return int Returns the numbers from verifyRegister()
  * */
 function registerInDatabase($userData) {
-    if (verifyRegister($userData)) {
+    $success = verifyRegister($userData);
+    // Creates the account if the verification is OK
+    if ($success == 1) {
         $dataArray = prepareDataArray($userData);
         $encodedData = json_encode($dataArray, JSON_PRETTY_PRINT);
         $success = insertData($encodedData, "data/users.json");
     }
-    else {
-        $success = false;
-    }
+    // Always returns the numbers so the controler can manage errors
     return $success;
+
 }
-
+/**
+ * @description This function is used to verify the register data.
+ *              It checks if the e-mail and username are already known to the database
+ *              or if the password verification isnt' correct.
+ * @return int 0 if something went wrong
+ *             1 if all works
+ *             2 if the password don't match
+ *             3 if the e-mail and username are already known to the database
+ * */
 function verifyRegister($userData) {
-    $result = false;
+    $result = 0; // something wrong happend
     $db = file_get_contents("data/users.json");
-
 
 
     $searchUsername =  searchUser($db, "username", $userData['userInputUsername']);
@@ -36,8 +44,14 @@ function verifyRegister($userData) {
 
     if(($searchEmail == false) && ($searchUsername == false)) {
         if($userData['userInputPassword'] == $userData['userInputPasswordRepeat']) {
-            $result = true;
+            $result = 1; //Success
         }
+        else {
+            $result = 2; // The two passwords don't match
+        }
+    }
+    else {
+        $result = 3; // E-mail and username already exists
     }
 
     return $result;

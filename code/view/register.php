@@ -8,9 +8,11 @@ ob_start();
     <script type="text/javascript" src="view/js/signUp.js"></script>
 </head>
 
+    
+
 <div class="container">
 
-    <h3 class="hidden" id="txtRegisterSuccess">Inscription validée !</h3>
+
     <p>*Obligatoire</p>
 
     <form id="frmSign" method="post" action="index.php?action=register">
@@ -31,6 +33,10 @@ ob_start();
         <input type="submit" value="S'inscrire" id="btnSubmitSign">
 
     </form>
+
+    <?php if(isset($registerErr)): ?>
+        <h3><?=$registerErr ?></h3>
+    <?php endif; ?>
 
 </div>
 
