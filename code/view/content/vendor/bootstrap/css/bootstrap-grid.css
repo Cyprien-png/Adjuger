@@ -61,6 +61,11 @@ html {
   margin-left: -15px;
 }
 
+.nav-flex-elements{
+  align-items: baseline;
+  justify-content: space-between;
+}
+
 .no-gutters {
   margin-right: 0;
   margin-left: 0;
