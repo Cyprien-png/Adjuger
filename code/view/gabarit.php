@@ -95,7 +95,7 @@
         <table class="container">
         <td><a href="#" class="nav-item nav-link active">Accueil</a></td>
         <td><a href="#" class="nav-item nav-link ">Contacter</a></td>
-        <td><a href="#" class="nav-item nav-link ">login</a></td>
+        <td><a href="/index.php?action=login" class="nav-item nav-link ">Connexion</a></td>
         </table>
           
         </div>

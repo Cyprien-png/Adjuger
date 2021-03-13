@@ -38,13 +38,28 @@ function register($userData) {
 }
 
 function login($userData) {
+
     require_once "model/userManager.php";
     if(isset($userData['userInputAuth'])) {
-        if(checkLogin($userData)) {
-            require "view/home.php";
+        $check = checkLogin($userData);
+        switch($check) {
+            case 0:
+                $loginErr = "Problème de connexion !";
+                break;
+            case 2:
+                $loginErr = "Informations incorrectes";
+                break;
+            default:
+                break;
+        }
+
+        if(isset($loginErr)) {
+            require "view/login.php";
+            //unset($loginErr);
         }
         else {
-            require "view/login.php";
+            require "view/home.php";
+            //unset($loginErr);
         }
 
     }

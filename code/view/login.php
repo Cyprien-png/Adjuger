@@ -1,5 +1,5 @@
 <?php
-$title = "Créer un compte";
+$title = "Se connecter";
 ob_start();
 ?>
 
@@ -16,11 +16,15 @@ ob_start();
             <input type="text" id="txtAuth" name="userInputAuth" required>
 
             <label for="txtPassword">Mot de passe* : </label>
-            <input type="text" id="txtPassword" name="userInputPassword" required>
+            <input type="password" id="txtPassword" name="userInputPassword" required>
 
             <input type="submit" value="Se connecter" id="btnSubmitSign">
 
         </form>
+
+        <?php if(isset($loginErr)): ?>
+            <h3><?= $loginErr ?></h3>
+        <?php endif; ?>
 
         <p>Pas de compte ? <a href="index.php?action=register">S'inscrire</a></p>
 

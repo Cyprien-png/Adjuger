@@ -25,15 +25,17 @@ function registerInDatabase($userData) {
     return $success;
 
 }
+
 /**
  * @description This function is used to verify the register data.
  *              It checks if the e-mail and username are already known to the database
  *              or if the password verification isnt' correct.
+ * @param $userData
  * @return int 0 if something went wrong
  *             1 if all works
- *             2 if the password don't match
+ *             2 if the passwords don't match
  *             3 if the e-mail and username are already known to the database
- * */
+ */
 function verifyRegister($userData) {
     $result = 0; // something wrong happend
     $db = file_get_contents("data/users.json");
@@ -98,22 +100,32 @@ function prepareDataArray($userData) {
 
 /**
  * @description Checks
- * @return bool True if the account exists and the pseudo/e-mail matches with the password. False if it doesn't
+ * @return int 1 if the account exists and the pseudo/e-mail matches with the password. 2 if it doesn't.
  * */
 function checkLogin($userData) {
-    $check = false;
+    $check = 0;
 
     $userAuth = $userData['userInputAuth'];
     $db = file_get_contents("data/users.json");
+    $json = json_decode($db, false);
 
-    $json = json_decode($db, true);
-    $userPsw = password_verify($userData['userInputPassword'], $json['users']['password']);
+    foreach ($json->users as $item) {
+        if (password_verify($userData['userInputPassword'], $item->password)) {
+            $userPsw = true;
+        }
+        else {
+            $userPsw = false;
+        }
+    }
 
     $checkUsername = searchUser($db, "username", $userAuth);
     $checkEmail = searchUser($db, "e-mail", $userAuth);
 
     if (($checkUsername || $checkEmail) && $userPsw) {
-        $check = true;
+        $check = 1;
+    }
+    else {
+        $check = 2;
     }
 
     return $check;
