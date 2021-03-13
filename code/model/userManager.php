@@ -10,8 +10,9 @@
  * */
 
 /**
- * @description Calls all the needed functions to insert the user data into the json users file
- * @return int Returns the numbers from verifyRegister()
+ * @description Calls all the needed functions to insert the user data into the json users file.
+ * @param $userData array The POST data from the register form.
+ * @return int Returns the numbers from verifyRegister().
  * */
 function registerInDatabase($userData) {
     $success = verifyRegister($userData);
@@ -30,19 +31,20 @@ function registerInDatabase($userData) {
  * @description This function is used to verify the register data.
  *              It checks if the e-mail and username are already known to the database
  *              or if the password verification isnt' correct.
- * @param $userData
- * @return int 0 if something went wrong
- *             1 if all works
- *             2 if the passwords don't match
- *             3 if the e-mail and username are already known to the database
+ * @param $userData array The POST data from the register form.
+ * @return int 0 if something went wrong,
+ *             1 if everything works,
+ *             2 if the passwords don't match,
+ *             3 if the e-mail and username are already known to the database.
  */
 function verifyRegister($userData) {
     $result = 0; // something wrong happend
+
     $db = file_get_contents("data/users.json");
+    $json = json_decode($db);
 
-
-    $searchUsername =  searchUser($db, "username", $userData['userInputUsername']);
-    $searchEmail = searchUser($db, "e-mail", $userData['userInputEmail']);
+    $searchUsername =  searchUser($json, "username", $userData['userInputUsername']);
+    $searchEmail = searchUser($json, "email", $userData['userInputEmail']);
 
     if(($searchEmail == false) && ($searchUsername == false)) {
         if($userData['userInputPassword'] == $userData['userInputPasswordRepeat']) {
@@ -60,9 +62,11 @@ function verifyRegister($userData) {
 }
 
 /**
- * @description Function used to append the data into the json file
- * @return bool True if the file writing succeeds or false if it fails
- * */
+ * @description Function used to append the data into the json file.
+ * @param $data string The json data we want to append to the file.
+ * @param $file string The path of the file that will be appended.
+ * @return bool True if the file writing succeeds or false if it fails.
+ */
 function insertData($data, $file) {
     $currentDataFile = file_get_contents($file);
     $currentData = json_decode($currentDataFile, true);
@@ -84,13 +88,14 @@ function insertData($data, $file) {
 }
 
 /**
- * @description Takes the POST array and makes a new array with correct naming. Hashes also the password
- * @return array the new data array
+ * @description Takes the POST array and makes a new array with correct naming. Hashes also the password.
+ * @param $userData array The POST data from the register form.
+ * @return array the new data array.
  * */
 function prepareDataArray($userData) {
     $userHashedPassword = password_hash($userData['userInputPassword'], PASSWORD_DEFAULT);
     $dataArray = array(
-        "e-mail" => $userData['userInputEmail'],
+        "email" => $userData['userInputEmail'],
         "username" => $userData['userInputUsername'],
         "password" => $userHashedPassword
     );
@@ -99,48 +104,50 @@ function prepareDataArray($userData) {
 }
 
 /**
- * @description Checks
+ * @description Checks the data inputted in the login form.
+ * @param $userData array The POST data from the login form.
  * @return int 1 if the account exists and the pseudo/e-mail matches with the password. 2 if it doesn't.
- * */
+ */
 function checkLogin($userData) {
-    $check = 0;
+    $check = 0; // Something else went wrong
 
     $userAuth = $userData['userInputAuth'];
     $db = file_get_contents("data/users.json");
     $json = json_decode($db, false);
 
     foreach ($json->users as $item) {
-        if (password_verify($userData['userInputPassword'], $item->password)) {
-            $userPsw = true;
-        }
-        else {
-            $userPsw = false;
+        if($item->username == $userAuth || $item->email== $userAuth ) {
+            if (password_verify($userData['userInputPassword'], $item->password)) {
+                $userExists = true;
+            } else {
+                $userExists = false;
+            }
+        } else {
+            $userExists = false;
         }
     }
 
-    $checkUsername = searchUser($db, "username", $userAuth);
-    $checkEmail = searchUser($db, "e-mail", $userAuth);
-
-    if (($checkUsername || $checkEmail) && $userPsw) {
-        $check = 1;
-    }
-    else {
-        $check = 2;
+    if ($userExists) {
+        $check = 1; //Everything matches
+    } else {
+        $check = 2; // The data doesn't match
     }
 
     return $check;
 }
 
 /**
- * @description Searches the json file to find an existing user
- * @return bool True if the user exits. False if it doesn't
- * */
-function searchUser($jsonArray, $toMatch, $match) {
+ * @description Searches the json object (the file) to find an existing user.
+ * @param $json object The JSON objecz to search trough.
+ * @param $field string The field to match (for ex. username).
+ * @param $match string The string that we want to match to the field.
+ * @return bool True if the user exists. False if he doesn't.
+ */
+function searchUser($json, $field, $match) {
     $result = false;
-    $json = json_decode($jsonArray);
 
     foreach ($json->users as $item) {
-        if ($item->$toMatch == $match) {
+        if ($item->$field == $match) {
             $result = true;
         }
     }

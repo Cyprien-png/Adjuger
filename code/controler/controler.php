@@ -13,13 +13,13 @@ function register($userData) {
             case 0:
                 $registerErr = "Une erreur est survenue.";
                 break;
-            case 3:
-                $registerErr = "L'e-mail ou le nom d'utilisateur est déja connu.";
+            case 1:
                 break;
             case 2:
                 $registerErr = "Les mots de passe ne correspondent pas.";
                 break;
-            default:
+            case 3:
+                $registerErr = "L'e-mail ou le nom d'utilisateur est déja connu.";
                 break;
         }
 
@@ -47,7 +47,7 @@ function login($userData) {
                 $loginErr = "Problème de connexion !";
                 break;
             case 2:
-                $loginErr = "Informations incorrectes";
+                $loginErr = "Informations incorrectes !";
                 break;
             default:
                 break;
@@ -55,11 +55,9 @@ function login($userData) {
 
         if(isset($loginErr)) {
             require "view/login.php";
-            //unset($loginErr);
         }
         else {
             require "view/home.php";
-            //unset($loginErr);
         }
 
     }

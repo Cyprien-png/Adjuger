@@ -24,10 +24,10 @@ ob_start();
         <input type="text" id="txtUsername" name="userInputUsername" required>
 
         <label for="txtPassword">Mot de passe* : </label>
-        <input type="text" id="txtPassword" name="userInputPassword" required>
+        <input type="password" id="txtPassword" name="userInputPassword" required>
 
-        <label for="txtPasswordRepeat">Mot de passe* : </label>
-        <input type="text" id="txtPasswordRepeat" name="userInputPasswordRepeat" required>
+        <label for="txtPasswordRepeat">Répeter Mot de passe* : </label>
+        <input type="password" id="txtPasswordRepeat" name="userInputPasswordRepeat" required>
 
 
         <input type="submit" value="S'inscrire" id="btnSubmitSign">
