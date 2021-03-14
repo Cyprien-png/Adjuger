@@ -9,11 +9,17 @@ if (isset($_GET['action'])) {
         case 'home':
             home();
             break;
+        case 'user':
+            showUser();
+            break;
         case 'register':
             register($_POST);
             break;
         case 'login':
             login($_POST);
+            break;
+        case 'logout':
+            logout();
             break;
         default:
             home();

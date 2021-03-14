@@ -4,6 +4,11 @@
             "email": "test@test.ch",
             "username": "test",
             "password": "$2y$10$QbeEdOuDVYBN7iJSNIqTVuIKOpgPMz9Ja2Pl3BRneSvJcxqUyAyD2"
+        },
+        {
+            "email": "a@a.a",
+            "username": "a",
+            "password": "$2y$10$4xkYWeD2RrRjU1uwDwJfLueASeS1eRwS8IRhGdWbBRAzAFZ8bLhTm"
         }
     ]
 }

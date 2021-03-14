@@ -5,7 +5,6 @@ ob_start();
 
 <head>
     <link href="view/css/style_register.css" rel="stylesheet">
-    <script type="text/javascript" src="view/js/signUp.js"></script>
 </head>
 
     

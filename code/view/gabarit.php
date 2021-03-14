@@ -71,7 +71,7 @@
 
     <div class="container row">
       <div class=" col-3 col-sm-2 col-md-1 col-lg-1">
-        <a href="action=home" class="navbar-brand">
+        <a href="/index.php?action=home" class="navbar-brand">
           <img src="view/content/images/Logo.svg" height="28" alt="Adjuger">
         </a>
       </div>
@@ -93,9 +93,13 @@
         </form>
         <div class="navbar-nav col-sm-5 col-md-2 col-lg-4">
         <table class="container">
-        <td><a href="#" class="nav-item nav-link active">Accueil</a></td>
+        <td><a href="/index.php?action=home" class="nav-item nav-link active">Accueil</a></td>
         <td><a href="#" class="nav-item nav-link ">Contacter</a></td>
-        <td><a href="/index.php?action=login" class="nav-item nav-link ">Connexion</a></td>
+        <?php if ($_SESSION['userLog'] == 1) :?>
+            <td><a href="/index.php?action=user"><img src="/view/content/images/user_icon.png" class="img-fluid"></a></td>
+        <?php else :?>
+            <td><a href="/index.php?action=login" class="nav-item nav-link ">Connexion</a></td>
+        <?php endif; ?>
         </table>
           
         </div>
