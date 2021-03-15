@@ -4,10 +4,7 @@
  * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-shop-homepage/blob/master/LICENSE)
  */
 
-*{
-  margin:0;
-  padding:0;
-  }
+
    
   
   body, html{height:100%;}
@@ -16,10 +13,7 @@
   text-align:center;
   }
   
-   
-  
-
-  
+  /* Id for set page position (and adapt footer) */
 #content-wrap {
   max-width:1280px;
   min-height:100%;
