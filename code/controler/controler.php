@@ -5,7 +5,13 @@ function home() {
 }
 
 function showUser() {
+    require_once "model/userManager.php";
     if(isset($_SESSION['userLog'])) {
+
+        $data = getUserFromId($_SESSION['userID']);
+        $username = $data['username'];
+        $email = $data['email'];
+
         require "view/user_page.php";
     }
     else {
@@ -45,13 +51,11 @@ function register($userData) {
                 require "view/home.php";
 
             }
-
         }
         else {
             require "view/register.php";
         }
     }
-
 
 }
 

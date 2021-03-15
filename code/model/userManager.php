@@ -19,6 +19,7 @@ function registerInDatabase($userData) {
     // Creates the account if the verification is OK
     if ($success == 1) {
         $dataArray = prepareDataArray($userData);
+        $_SESSION['userID'] = $dataArray['id'];
         $encodedData = json_encode($dataArray, JSON_PRETTY_PRINT);
         $success = insertData($encodedData, "data/users.json");
     }
@@ -94,7 +95,10 @@ function insertData($data, $file) {
  * */
 function prepareDataArray($userData) {
     $userHashedPassword = password_hash($userData['userInputPassword'], PASSWORD_DEFAULT);
+    $id = uniqid();
+
     $dataArray = array(
+        "id" => $id,
         "email" => $userData['userInputEmail'],
         "username" => $userData['userInputUsername'],
         "password" => $userHashedPassword
@@ -118,6 +122,7 @@ function checkLogin($userData) {
     foreach ($json->users as $item) {
         if($item->username == $userAuth || $item->email== $userAuth ) {
             if (password_verify($userData['userInputPassword'], $item->password)) {
+                $_SESSION['userID'] = $item->id;
                 $userExists = true;
             } else {
                 $userExists = false;
@@ -153,5 +158,18 @@ function searchUser($json, $field, $match) {
     }
 
     return $result;
+}
+
+function getUserFromId($id)
+{
+    $db = file_get_contents("data/users.json");
+    $json = json_decode($db, false);
+
+    foreach ($json->users as $item) {
+        if ($item->id == $id) {
+            $data =  array("username" => $item->username, "email" => $item->email);
+        }
+    }
+    return $data;
 }
 

@@ -1,14 +1,28 @@
 {
     "users": [
         {
-            "email": "test@test.ch",
-            "username": "test",
-            "password": "$2y$10$QbeEdOuDVYBN7iJSNIqTVuIKOpgPMz9Ja2Pl3BRneSvJcxqUyAyD2"
+            "id": "604f11f6624d4",
+            "email": "c@c.c",
+            "username": "c",
+            "password": "$2y$10$XQhg0zRcVi7aNW4jFe7d1uAurRSGRE4FVNEbBWHWQFRgmqnM\/DI92"
         },
         {
+            "id": "604f135bd914b",
+            "email": "axel.pittet@cpnv.ch",
+            "username": "tamaman",
+            "password": "$2y$10$KiRbyfQ5ra8jddJ\/TdnveO2YJf\/d66yFy4SOsHTjveiTfgfkgMaYS"
+        },
+        {
+            "id": "604f18df6725b",
+            "email": "v@v.v",
+            "username": "v",
+            "password": "$2y$10$vPmV61jmfdI5yB.xo5TaQOoil7WtZ27\/ySpDVNL7PJwXYW8zPZv5m"
+        },
+        {
+            "id": "604f19fb34638",
             "email": "a@a.a",
             "username": "a",
-            "password": "$2y$10$4xkYWeD2RrRjU1uwDwJfLueASeS1eRwS8IRhGdWbBRAzAFZ8bLhTm"
+            "password": "$2y$10$pBRKT.qeQTt.z9.DMBvZ5.OPQOXeAnCvETUM7oIYsNEnTyB0R5.eC"
         }
     ]
 }
