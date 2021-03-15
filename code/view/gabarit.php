@@ -95,7 +95,7 @@
         <table class="container">
         <td><a href="/index.php?action=home" class="nav-item nav-link active">Accueil</a></td>
         <td><a href="#" class="nav-item nav-link ">Contacter</a></td>
-        <?php if ($_SESSION['userLog'] == 1) :?>
+        <?php if (isset($_SESSION['userLog'])) :?>
             <td><a href="/index.php?action=user"><img src="/view/content/images/user_icon.png" class="img-fluid"></a></td>
         <?php else :?>
             <td><a href="/index.php?action=login" class="nav-item nav-link ">Connexion</a></td>

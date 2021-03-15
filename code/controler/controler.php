@@ -11,7 +11,7 @@ function showUser() {
 function register($userData) {
     require_once "model/userManager.php";
 
-    if($_SESSION['userLog'] == 1) {
+    if(isset($_SESSION['userLog'])) {
         require "view/home.php";
     }
     else {
@@ -54,7 +54,7 @@ function login($userData) {
     require_once "model/userManager.php";
 
     // Redirects the user to the home page if he's already logged in
-    if($_SESSION['userLog'] == 1) {
+    if(isset($_SESSION['userLog'])) {
         require "view/home.php";
     }
     else {
