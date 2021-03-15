@@ -5,7 +5,12 @@ function home() {
 }
 
 function showUser() {
-    require "view/user_page.php";
+    if(isset($_SESSION['userLog'])) {
+        require "view/user_page.php";
+    }
+    else {
+        require "view/home.php";
+    }
 }
 
 function register($userData) {

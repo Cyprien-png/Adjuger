@@ -138,7 +138,7 @@ function checkLogin($userData) {
 
 /**
  * @description Searches the json object (the file) to find an existing user.
- * @param $json object The JSON objecz to search trough.
+ * @param $json object The JSON object to search trough.
  * @param $field string The field to match (for ex. username).
  * @param $match string The string that we want to match to the field.
  * @return bool True if the user exists. False if he doesn't.
