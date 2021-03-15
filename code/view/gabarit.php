@@ -30,44 +30,7 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg fixed-top navbar-expand-md navbar-light " id="header">
-    <!-- <div class="container row">
-
-
-
-      <div class="col">
-        <a href="action=home" class="navbar-brand">
-          <img src="view/content/images/Logo.svg" height="28" alt="Adjuger">
-        </a>
-      </div>
-
-      <div class="col-md-auto col-auto">
-      <div class=" col-2 col-btncoll">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <form class="form-inline my-2 my-lg-0 ">
-              <input class="form-control " type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-            <div class="navbar-nav">
-              <a href="#" class="nav-item nav-link active">Accueil</a>
-              <a href="#" class="nav-item nav-link">Contacter</a>
-            </div>
-          </div>
-          
-          </div>
-        </div>
-
-      <div class="col-2  col-lg-2 >
-        <div class="navbar-nav">
-          <a href="index.php?action=login" class="nav-item nav-link">Login</a>
-        </div>
-      </div>
-    </div> -->
-
+  <nav class="navbar navbar-expand-lg fixed-top navbar-expand-md navbar-light " id="header">
 
     <div class="container row">
       <div class=" col-3 col-sm-2 col-md-1 col-lg-1">
@@ -87,23 +50,28 @@
 
       <div class="collapse navbar-collapse" id="navbarCollapse">
 
-        <form class="form-inline my-2 my-lg-0 col-8 col-sm-10 col-md-6 col-lg-7">
-          <input class="form-control col-7 col-sm-7 col-md-8 col-lg-7" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0 col-5 col-sm-2 col-md-4  col-lg-3" type="submit">Search</button>
+        <form class="form-inline my-2 my-lg-0 col-8 col-sm-10 col-md-6 col-lg-6">
+          <input class="form-control col-7 col-sm-7 col-md-7 col-lg-7" type="search" placeholder="Rechercher" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0 col-5 col-sm-3 col-md-5  col-lg-4" type="submit">Chercher</button>
         </form>
-        <div class="navbar-nav col-sm-5 col-md-2 col-lg-4">
-        <table class="container">
-        <td><a href="/index.php?action=home" class="nav-item nav-link active">Accueil</a></td>
-        <td><a href="#" class="nav-item nav-link ">Contacter</a></td>
-        <?php if (isset($_SESSION['userLog'])) :?>
-            <td><a href="/index.php?action=user"><img src="/view/content/images/user_icon.png" class="img-fluid"></a></td>
-        <?php else :?>
-            <td><a href="/index.php?action=login" class="nav-item nav-link ">Connexion</a></td>
-        <?php endif; ?>
-        </table>
-          
+        <div class="navbar-nav col-3 col-sm-5 col-md-5 col-lg-5">
+          <table class="container">
+            <td><a href="/index.php?action=home" class="nav-item nav-link active">Accueil</a></td>
+            <td><a href="#" class="nav-item nav-link ">Contacter</a></td>
+            <td>
+              <?php if (isset($_SESSION['userLog'])) : ?>
+                <a href="/index.php?action=user" class="navbar-brand">
+                  <img src="/view/content/images/user_icon.png" height="28" alt="Adjuger">
+                </a>
+               
+                <!-- img-fluid -->
+              <?php else : ?>
+                <a href="/index.php?action=login" class="nav-item nav-link ">Connexion</a>
+              <?php endif; ?>
+            </td>
+          </table>
         </div>
-      
+
       </div>
 
 
@@ -113,12 +81,11 @@
   <?= $content; ?>
 
 
-  <!-- Footer -->
-  <footer class="py-5" id="footer">
+  <!-- Footer fixed-bottom-->
+  <footer class="py-5 mt-auto" id="footer">
     <div class="container">
       <p class="m-0 text-center text-white">Copyright &copy; Adjuger 2021</p>
     </div>
-    <!-- /.container -->
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

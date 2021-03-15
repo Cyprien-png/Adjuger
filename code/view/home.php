@@ -6,9 +6,9 @@ ob_start();
 <head>
     <link href="css/style_homepage.css" rel="styles heet">
 </head>
-
-<div class="container">
-    <div class="row">
+    
+<div class="container" id="content-wrap">
+    <div class="row" id="page">
 
         <div class="col-lg-3">
 
@@ -93,7 +93,6 @@ ob_start();
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
                         </div>
                         <div class="card-footer">
-                            <small id="footer"></small>
                         </div>
                     </div>
                 </div>
