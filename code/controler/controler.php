@@ -4,6 +4,7 @@ function home() {
     require "view/home.php";
 }
 
+// <editor-fold desc="Users" >
 function showUser() {
     require_once "model/userManager.php";
     if(isset($_SESSION['userLog'])) {
@@ -101,10 +102,21 @@ function logout() {
     unset($_SESSION['userLog']);
     home();
 }
+// </editor-fold>
 
+// <editor-fold desc="Offers" >
+function addOffer() {
+    require "view/offer_add.php";
+}
+// </editor-fold >
+
+// <editor-fold desc="Session" >
 function createSession($userLog) {
     $_SESSION['userLog'] = $userLog;
 }
+// </editor-fold >
+
+
 
 
 
