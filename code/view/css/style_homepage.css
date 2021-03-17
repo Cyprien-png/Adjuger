@@ -21,6 +21,10 @@
   position:relative;
 }
 
+#required{
+  color: #990033;
+}
+
 .title {
   text-align: center;
   margin-top: 4%;

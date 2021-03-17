@@ -16,7 +16,6 @@ ob_start();
 
     <a href="/index.php?action=logout" class="nav-item nav-link ">Déconnexion</a>
 
-</div>
 
 <?php
 $content = ob_get_clean();

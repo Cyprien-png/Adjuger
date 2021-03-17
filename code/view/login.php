@@ -9,29 +9,29 @@ ob_start();
 
 <div class="container title bodyContent " id="content-wrap">
     <br><h2>Connexion</h2>
-    <div class="list-group bordered center col-10 col-sm-8 col-md-8 col-lg-6">
+        <div class="list-group bordered center col-10 col-sm-8 col-md-8 col-lg-6">
 
-        <form id="frmLogin" method="post" action="index.php?action=login">
-            <table>
-                <br>
-                <tr>
-                    <td><label for="txtAuth"> Nom d'utilisateur / E-Mail : </label></td>
-                </tr>
-                <tr>
-                    <td><input type="text" id="txtAuth" name="userInputAuth" required><br></td>
-                </tr>
-                <tr>
-                    <td><br><label for="txtPassword">Mot de passe* : </label></td>
-                </tr>
-                <tr>
-                    <td><input type="password" id="txtPassword" name="userInputPassword" required><br><br></td>
-                </tr>
-                <tr>
-                <td><br><input type="submit" value="Se connecter" id="btnSubmitSign"></td>
-                </tr>
-            </table>
+            <form id="frmLogin" method="post" action="index.php?action=login">
+                <table>
+                    <br>
+                    <tr>
+                        <td><label for="txtAuth"> Nom d'utilisateur / E-Mail : </label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="txtAuth" name="userInputAuth" required><br></td>
+                    </tr>
+                    <tr>
+                        <td><br><label for="txtPassword">Mot de passe* : </label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="password" id="txtPassword" name="userInputPassword" required><br><br></td>
+                    </tr>
+                    <tr>
+                    <td><br><input type="submit" value="Se connecter" id="btnSubmitSign"></td>
+                    </tr>
+                </table>
 
-        </form>
+            </form>
         <?php if (isset($loginErr)) : ?>
             <h3><?= $loginErr ?></h3>
         <?php endif; ?>
