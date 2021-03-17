@@ -3,10 +3,10 @@ $title = "Mon compte";
 ob_start();
 ?>
 
-    <head>
-        <link href="view/css/style_lo.css" rel="stylesheet">
-    </head>
-
+<head>
+    <link href="view/css/style_lo.css" rel="stylesheet">
+</head>
+<div id="content-wrap">
 
     <img src="view/content/images/user_icon.png" style="height: 70px">
 
@@ -16,7 +16,7 @@ ob_start();
 
     <a href="/index.php?action=logout" class="nav-item nav-link ">Déconnexion</a>
 
-
+</div>
 
 <?php
 $content = ob_get_clean();

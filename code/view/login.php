@@ -7,9 +7,9 @@ ob_start();
     <link href="view/css/style_lo.css" rel="stylesheet">
 </head>
 
-<div class="container title bodyContent" id="content-wrap">
-    <h2>Connexion</h2>
-    <div class="list-group bordered center">
+<div class="container title bodyContent " id="content-wrap">
+    <br><h2>Connexion</h2>
+    <div class="list-group bordered center col-10 col-sm-8 col-md-8 col-lg-6">
 
         <form id="frmLogin" method="post" action="index.php?action=login">
             <table>
