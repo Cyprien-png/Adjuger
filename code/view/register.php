@@ -13,10 +13,10 @@ ob_start();
 
     <br>
     <h2>Register</h2>
-    
+
 
     <div class="list-group bordered center col-10 col-sm-8 col-md-8 col-lg-6">
-    <p id="required">*Obligatoire</p>
+        <p id="required">*Obligatoire</p>
         <form id="frmSign" method="post" action="index.php?action=register">
             <table>
                 <br>
@@ -44,10 +44,13 @@ ob_start();
                 <tr>
                     <td><input type="password" id="txtPasswordRepeat" name="userInputPasswordRepeat" required></td>
                 </tr>
+                <tr>
+                    <td><br> <input type="submit" value="S'inscrire" id="btnSubmitSign"></td>
+                </tr>
             </table>
 
 
-        <input type="submit" value="S'inscrire" id="btnSubmitSign">
+
 
         </form>
 
@@ -56,11 +59,11 @@ ob_start();
         <?php endif; ?>
 
         <br><br>
-        <p>Déja un compte ? <a href="index.php?action=register">Se connecter</a></p>
+        <p>Déja un compte ? <a href="index.php?action=login">Se connecter</a></p>
 
-</div>
     </div>
+</div>
 
-    <?php
-    $content = ob_get_clean();
-    require "view/gabarit.php";
+<?php
+$content = ob_get_clean();
+require "view/gabarit.php";

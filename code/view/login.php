@@ -21,7 +21,7 @@ ob_start();
                         <td><input type="text" id="txtAuth" name="userInputAuth" required><br></td>
                     </tr>
                     <tr>
-                        <td><br><label for="txtPassword">Mot de passe* : </label></td>
+                        <td><label for="txtPassword">Mot de passe* : </label></td>
                     </tr>
                     <tr>
                         <td><input type="password" id="txtPassword" name="userInputPassword" required><br><br></td>
