@@ -1,6 +1,8 @@
 <?php
 
 function home() {
+    require_once "model/offerManager.php";
+    showOffers();
     require "view/home.php";
 }
 
