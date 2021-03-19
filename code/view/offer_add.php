@@ -7,7 +7,7 @@ ob_start();
         <link rel="stylesheet" href="view/css/style_add-offer.css" >
     </head>
 
-    <form id="frmAddOffer" method="post" action="index.php?action=login">
+    <form id="frmAddOffer" method="post" action="index.php?action=addOffer">
 
         <label for="txtOfferTitle">Titre : </label>
         <input type="text" id="OfferTitle" name="offerTitle" required>

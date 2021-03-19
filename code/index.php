@@ -22,7 +22,7 @@ if (isset($_GET['action'])) {
             logout();
             break;
         case 'addOffer':
-            addOffer();
+            addOffer($_POST);
             break;
         default:
             home();

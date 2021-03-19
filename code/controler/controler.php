@@ -105,8 +105,15 @@ function logout() {
 // </editor-fold>
 
 // <editor-fold desc="Offers" >
-function addOffer() {
-    require "view/offer_add.php";
+function addOffer($offerData) {
+    if(isset($offerData)) {
+        addOfferDB();
+        require "view/user_page.php";
+    }
+    else {
+        require "view/offer_add.php";
+    }
+
 }
 // </editor-fold >
 
