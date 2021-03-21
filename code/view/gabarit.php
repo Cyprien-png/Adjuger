@@ -15,6 +15,7 @@
   <!-- <link href="view/content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
   <link href="view/css/style_homepage.css" rel="stylesheet">
 
+
   <style>
     .bs-example {
       margin: 20px;

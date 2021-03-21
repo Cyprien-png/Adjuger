@@ -107,14 +107,15 @@ function logout() {
 // </editor-fold>
 
 // <editor-fold desc="Offers" >
-function addOffer($offerData) {
-    if(isset($offerData)) {
-        addOfferDB();
+function addOffer($offerData, $offerImages) {
+    if(isset($offerData['offerTitle'])) {
+        addOfferDB($offerData, $offerImages);
         require "view/user_page.php";
     }
     else {
         require "view/offer_add.php";
     }
+
 
 }
 // </editor-fold >

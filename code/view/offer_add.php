@@ -1,5 +1,5 @@
 <?php
-$title = "Se connecter";
+$title = "Ajouter une offre";
 ob_start();
 ?>
 
@@ -18,11 +18,21 @@ ob_start();
         <label for="txtDescription">Description : </label>
         <textarea id="txtDescription" name="offerDescription"></textarea>
         <br><br>
-        <label for="fileImage">Image : </label>
-        <input type="file" id="fileImage" name="offerImage" placeholder="Image (PGN, JPG)" multiple="multiple6">
+
+        <label for="fileImage">Image(s) : </label>
+        <input type="file" id="fileImage" name="offerImage" placeholder="Image (JPG, PNG)" multiple="multiple" required>
+
         <br><br>
-        <label for="txtTags">Catégories : </label>
-        <input type="text" id="txtTags" name="offerTags">
+        <label for="cmbCategory" >Catégorie</label>
+        <select name="offerCategory" id="cmbCategory">
+            <option value = "Electronics" selected>Éléctronique</option>
+            <option value = "">Meuble</option>
+            <option value = "Discrete Mathematics">Vehicule</option>
+            <option value = "Discrete Mathematics">Vehicule</option>
+            <option value = "Discrete Mathematics">Vehicule</option>
+            <option value = "Discrete Mathematics">Vehicule</option>
+        </select>
+
         <br><br>
         <input type="submit" value="Poster l'annonce" id="btnSubmitSign">
 
