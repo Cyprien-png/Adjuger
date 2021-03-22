@@ -12,8 +12,8 @@ function showUser() {
     require_once "model/userManager.php";
     if(isset($_SESSION['userLog'])) {
 
-        $data = getUserFromId($_SESSION['userID']);
-        $username = $data['username'];
+
+        ['username'];
         $email = $data['email'];
 
         require "view/user_page.php";
