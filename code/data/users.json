@@ -35,6 +35,12 @@
             "email": "ben@b.b",
             "username": "ben",
             "password": "$2y$10$Um4C6NCzjVfpSMpIDox3i.OBD83WIT..Nqt8Hrh9IW88YGH81zDUW"
+        },
+        {
+            "id": "605866d696c08",
+            "email": "123435@qwe.f",
+            "username": "TEST",
+            "password": "$2y$10$w7SvLNMf1P2Dcz2SySBtUOpvavyo\/iP5g8RI6moVhGE7PXSFODtnO"
         }
     ]
 }
