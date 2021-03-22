@@ -107,10 +107,11 @@ function logout() {
 // </editor-fold>
 
 // <editor-fold desc="Offers" >
-function addOffer($offerData, $offerImages) {
-    if(isset($offerData['offerTitle'])) {
-        addOfferDB($offerData, $offerImages);
-        require "view/user_page.php";
+function addOffer($offerData) {
+    require_once "model/offerManager.php";
+    if(isset($offerData['offerTitle']) ) {
+        addOfferDB($offerData, $_FILES['offerImage']);
+        require "view/home.php";
     }
     else {
         require "view/offer_add.php";

@@ -3,15 +3,15 @@
 
 /**
  * @description Calls all the needed functions to insert the user data into the json offers file.
- * @param $userData array The POST data from the register form.
+ * @param $offerData array The POST data from the register form.
+ * @param $offerImages array The POST data from the register form.
  * @return int Returns the numbers from verifyRegister().
  * */
 function addOfferDB($offerData, $offerImages)
 {
     $imageLink = insertImages($offerImages);
     $dataArray = prepareDataArray($offerData, $imageLink);
-    $encodedData = json_encode($dataArray, JSON_PRETTY_PRINT);
-    $success = insertData($encodedData, "data/offers.json");
+    $success = insertData($dataArray, "data/offers.json");
 
     // Always returns the numbers so the controler can manage errors
     return $success;
@@ -32,9 +32,11 @@ function insertImages($images) {
             $nameExt = explode('.', $images['name']);
             switch ($nameExt[1]) {
                 case "jpg":
+                case "JPG":
                     $dest = "data/images/offers/$imageName.jpg";
                     break;
                 case "png":
+                case "PNG":
                     $dest = "data/images/offers/$imageName.png";
                     break;
             }
@@ -64,12 +66,14 @@ function showOffers()
 function prepareDataArray($offerData, $offerImages)
 {
     $id = uniqid();
+    $date = date('d.m.Y');
 
     $dataArray = array(
         "id" => $id,
         "title" => $offerData['offerTitle'],
         "price" => $offerData['offerPrice'],
-        "description" => $offerData['Description'],
+        "date" => $date,
+        "description" => $offerData['offerDescription'],
         "images" => $offerImages,
         "category" => $offerData['offerCategory']
     );
@@ -79,7 +83,7 @@ function prepareDataArray($offerData, $offerImages)
 
 /**
  * @description Function used to append the data into the json file.
- * @param $data string The json data we want to append to the file.
+ * @param $data array The json data we want to append to the file.
  * @param $file string The path of the file that will be appended.
  * @return bool True if the file writing succeeds or false if it fails.
  */
@@ -88,8 +92,8 @@ function insertData($data, $file)
     $currentDataFile = file_get_contents($file);
     $currentData = json_decode($currentDataFile, true);
 
-    $newData = json_decode($data, true);
-    array_push($currentData['offers'], $newData);
+
+    array_push($currentData['offers'], $data);
 
     $finalData = json_encode($currentData, JSON_PRETTY_PRINT);
     $success = file_put_contents($file, $finalData);
