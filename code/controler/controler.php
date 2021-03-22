@@ -2,7 +2,7 @@
 
 function home() {
     require_once "model/offerManager.php";
-    showOffers();
+    $items = showOffers();
     require "view/home.php";
 }
 

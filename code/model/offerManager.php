@@ -49,15 +49,16 @@ function insertImages($images) {
 function showOffers()
 {
     $ENCODED = file_get_contents("data/offers.json");
-    $offers = json_decode($ENCODED, true);
-    print_r($offers);
+    $json = json_decode($ENCODED, false);
     // $offerList = array(
     //     '2310'      => $offers[2310],
     //     '2311'      => $offers[2311]);
-    foreach ($offers as $value) {
-
+    $offersItmes = array();
+    foreach ($json->offers as $item) {
+        array_push($offersItmes, $item);
     }
     /// echo $offers[2311]["name"];
+    return $offersItmes;
 }
 
 function prepareDataArray($offerData, $offerImages)

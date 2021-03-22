@@ -1,0 +1,22 @@
+{
+    "offers": [
+        {
+            "id": "123",
+            "title": "Photographe",
+            "description": "Je vous fait des shootings",
+            "owner": "Cyprien",
+            "price": "350.- CHF",
+            "date": "22.03.2021",
+            "image": "data/images/test.jpg"
+        },
+        {
+            "id": "124",
+            "title": "jardinier",
+            "description": "Je vous arrange vos jardins",
+            "owner": "Cyprien",
+            "price": "550.- CHF",
+            "date": "22.03.2021",
+            "image": "data/images/test1.jpg"
+        }
+    ]
+}
