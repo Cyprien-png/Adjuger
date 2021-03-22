@@ -19,7 +19,7 @@ function showUser() {
         require "view/user_page.php";
     }
     else {
-        require "view/home.php";
+        home();
     }
 }
 
@@ -27,7 +27,7 @@ function register($userData) {
     require_once "model/userManager.php";
 
     if(isset($_SESSION['userLog'])) {
-        require "view/home.php";
+        home();
     }
     else {
         if(isset($userData['userInputEmail'])) {
@@ -52,7 +52,7 @@ function register($userData) {
             }
             else {
                 createSession(1);
-                require "view/home.php";
+                home();
 
             }
         }
@@ -68,7 +68,7 @@ function login($userData) {
 
     // Redirects the user to the home page if he's already logged in
     if(isset($_SESSION['userLog'])) {
-        require "view/home.php";
+        home();
     }
     else {
         if(isset($userData['userInputAuth'])) {
@@ -111,16 +111,22 @@ function logout() {
 // <editor-fold desc="Offers" >
 function addOffer($offerData) {
     require_once "model/offerManager.php";
-    if(isset($offerData['offerTitle']) ) {
-        addOfferDB($offerData, $_FILES['offerImage']);
-        require "view/home.php";
+    if(!isset($_SESSION['userLog'])) {
+        home();
     }
     else {
-        require "view/offer_add.php";
+        if(isset($offerData['offerTitle']) ) {
+            addOfferDB($offerData, $_FILES['offerImage']);
+            home();
+        }
+        else {
+            require "view/offer_add.php";
+        }
     }
 
-
 }
+
+
 // </editor-fold >
 
 // <editor-fold desc="Session" >

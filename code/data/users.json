@@ -17,7 +17,7 @@
             "email": "v@v.v",
             "username": "v",
             "password": "$2y$10$vPmV61jmfdI5yB.xo5TaQOoil7WtZ27\/ySpDVNL7PJwXYW8zPZv5m"
-        },  
+        },
         {
             "id": "604f19fb34638",
             "email": "a@a.a",
@@ -29,6 +29,12 @@
             "email": "Cyprien.Jaquier@cpnv.ch",
             "username": "Cyprien",
             "password": "$2y$10$QfHO1ARzrtHbhtV9xlXA3eup4RR4ZwztnYUQaVbC0uvQrSFF2g3Ee"
+        },
+        {
+            "id": "60585716e815e",
+            "email": "ben@b.b",
+            "username": "ben",
+            "password": "$2y$10$Um4C6NCzjVfpSMpIDox3i.OBD83WIT..Nqt8Hrh9IW88YGH81zDUW"
         }
     ]
 }

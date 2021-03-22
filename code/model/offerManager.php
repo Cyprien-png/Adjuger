@@ -10,14 +10,14 @@
 function addOfferDB($offerData, $offerImages)
 {
     $imageLink = insertImages($offerImages);
-<<<<<<< Updated upstream
-    $dataArray = prepareDataArray($offerData, $imageLink);
-    $success = insertData($dataArray, "data/offers.json");
-=======
+
+    $dataArray = prepareOfferArray($offerData, $imageLink);
+    $success = insertOffer($dataArray, "data/offers.json");
+
     $dataArray = prepareOfferArray($offerData, $imageLink);
     $encodedData = json_encode($dataArray, JSON_PRETTY_PRINT);
-    $success = insertData($encodedData, "data/offers.json");
->>>>>>> Stashed changes
+    $success = insertOffer($encodedData, "data/offers.json");
+
 
     // Always returns the numbers so the controler can manage errors
     return $success;

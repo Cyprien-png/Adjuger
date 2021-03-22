@@ -21,7 +21,7 @@ function registerInDatabase($userData) {
         $dataArray = prepareUserArray($userData);
         $_SESSION['userID'] = $dataArray['id'];
         $encodedData = json_encode($dataArray, JSON_PRETTY_PRINT);
-        $success = insertData($encodedData, "data/users.json");
+        $success = insertUser($encodedData, "data/users.json");
     }
     // Always returns the numbers so the controler can manage errors
     return $success;
@@ -171,5 +171,9 @@ function getUserFromId($id)
         }
     }
     return $data;
+}
+
+function getUser() {
+
 }
 
