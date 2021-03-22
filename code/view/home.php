@@ -33,13 +33,13 @@ ob_start();
 
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                        <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
+                        <img class="d-block img-fluid" src="view\content\images\Slogan1.png" alt="First slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
+                        <img class="d-block img-fluid" src="view\content\images\Slogan2.png" alt="Second slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
+                        <img class="d-block img-fluid" src="view\content\images\Slogan3.png" alt="Third slide">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -51,10 +51,10 @@ ob_start();
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-
+ 
             <div class="row">
 
-            <?php foreach ($items as $row) : ?>
+            <?php foreach ($items as $row) : $count++; ?>
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
                             <a href="#"><img class="card-img-top" src="<?=$row->image ?>" alt=""></a>
@@ -69,7 +69,7 @@ ob_start();
                             </div>
                         </div>
                     </div>
-                <?php endforeach; ?>
+                <?php if($count==6)break; endforeach; ?>
 
             </div>
             <!-- /.row -->

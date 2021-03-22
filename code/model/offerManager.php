@@ -10,8 +10,14 @@
 function addOfferDB($offerData, $offerImages)
 {
     $imageLink = insertImages($offerImages);
+<<<<<<< Updated upstream
     $dataArray = prepareDataArray($offerData, $imageLink);
     $success = insertData($dataArray, "data/offers.json");
+=======
+    $dataArray = prepareOfferArray($offerData, $imageLink);
+    $encodedData = json_encode($dataArray, JSON_PRETTY_PRINT);
+    $success = insertData($encodedData, "data/offers.json");
+>>>>>>> Stashed changes
 
     // Always returns the numbers so the controler can manage errors
     return $success;
@@ -63,7 +69,7 @@ function showOffers()
     return $offersItmes;
 }
 
-function prepareDataArray($offerData, $offerImages)
+function prepareOfferArray($offerData, $offerImages)
 {
     $id = uniqid();
     $date = date('d.m.Y');
@@ -87,7 +93,7 @@ function prepareDataArray($offerData, $offerImages)
  * @param $file string The path of the file that will be appended.
  * @return bool True if the file writing succeeds or false if it fails.
  */
-function insertData($data, $file)
+function insertOffer($data, $file)
 {
     $currentDataFile = file_get_contents($file);
     $currentData = json_decode($currentDataFile, true);

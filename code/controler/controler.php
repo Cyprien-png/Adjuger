@@ -2,6 +2,7 @@
 
 function home() {
     require_once "model/offerManager.php";
+    $count = 0;
     $items = showOffers();
     require "view/home.php";
 }
@@ -88,7 +89,8 @@ function login($userData) {
             }
             else {
                 createSession(1);
-                require "view/home.php";
+                home();
+                //require "view/home.php";
 
             }
 

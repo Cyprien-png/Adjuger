@@ -18,7 +18,7 @@ function registerInDatabase($userData) {
     $success = verifyRegister($userData);
     // Creates the account if the verification is OK
     if ($success == 1) {
-        $dataArray = prepareDataArray($userData);
+        $dataArray = prepareUserArray($userData);
         $_SESSION['userID'] = $dataArray['id'];
         $encodedData = json_encode($dataArray, JSON_PRETTY_PRINT);
         $success = insertData($encodedData, "data/users.json");
@@ -68,7 +68,7 @@ function verifyRegister($userData) {
  * @param $file string The path of the file that will be appended.
  * @return bool True if the file writing succeeds or false if it fails.
  */
-function insertData($data, $file) {
+function insertUser($data, $file) {
     $currentDataFile = file_get_contents($file);
     $currentData = json_decode($currentDataFile, true);
 
@@ -93,7 +93,7 @@ function insertData($data, $file) {
  * @param $userData array The POST data from the register form.
  * @return array the new data array.
  * */
-function prepareDataArray($userData) {
+function prepareUserArray($userData) {
     $userHashedPassword = password_hash($userData['userInputPassword'], PASSWORD_DEFAULT);
     $id = uniqid();
 
