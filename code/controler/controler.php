@@ -13,8 +13,8 @@ function showUser() {
     if(isset($_SESSION['userLog'])) {
 
 
-        ['username'];
-        $email = $data['email'];
+        $username = $_SESSION['username'];
+        $email = $_SESSION['email'];
 
         require "view/user_page.php";
     }

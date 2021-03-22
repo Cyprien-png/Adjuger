@@ -58,7 +58,9 @@
         <div class="navbar-nav col-3 col-sm-5 col-md-5 col-lg-5">
           <table class="container">
             <td><a href="/index.php?action=home" class="nav-item nav-link active">Accueil</a></td>
-            <td><a href="#" class="nav-item nav-link ">Contacter</a></td>
+            <?php if(isset($_SESSION['email'])) :?>
+              <td><a href="#" class="nav-item nav-link ">Ajouter</a></td>
+            <?php endif;?>
             <td>
               <?php if (isset($_SESSION['userLog'])) : ?>
                 <a href="/index.php?action=user" class="navbar-brand">
