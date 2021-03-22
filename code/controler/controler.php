@@ -51,7 +51,7 @@ function register($userData) {
                 require "view/register.php";
             }
             else {
-                createSession(1);
+                createSession(1, $userData['userInputUsername'] , $userData['userInputEmail']);
                 home();
 
             }
@@ -88,7 +88,8 @@ function login($userData) {
                 require "view/login.php";
             }
             else {
-                createSession(1);
+                $auth = getUser($userData['userInputAuth']);
+                createSession(1, $auth['username'], $auth['email']);
                 home();
                 //require "view/home.php";
 
@@ -130,8 +131,11 @@ function addOffer($offerData) {
 // </editor-fold >
 
 // <editor-fold desc="Session" >
-function createSession($userLog) {
+function createSession($userLog, $username, $email) {
     $_SESSION['userLog'] = $userLog;
+    $_SESSION['username'] = $username;
+    $_SESSION['email'] = $email;
+
 }
 // </editor-fold >
 

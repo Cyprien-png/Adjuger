@@ -7,7 +7,7 @@
             "owner": "Cyprien",
             "price": "350.- CHF",
             "date": "22.03.2021",
-            "image": "data/images/offers/test.jpg",
+            "image": "data\/images\/offers\/test.jpg",
             "category": "photo"
         },
         {
@@ -17,7 +17,7 @@
             "owner": "Cyprien",
             "price": "550.- CHF",
             "date": "22.03.2021",
-            "image": "data/images/offers/test1.jpg",
+            "image": "data\/images\/offers\/test1.jpg",
             "category": "home"
         },
         {
@@ -27,7 +27,7 @@
             "owner": "Cyprien",
             "price": "550.- CHF",
             "date": "22.03.2021",
-            "image": "data/images/offers/test1.jpg",
+            "image": "data\/images\/offers\/test1.jpg",
             "category": "home"
         },
         {
@@ -37,7 +37,7 @@
             "owner": "Cyprien",
             "price": "550.- CHF",
             "date": "22.03.2021",
-            "image": "data/images/offers/test1.jpg",
+            "image": "data\/images\/offers\/test1.jpg",
             "category": "home"
         },
         {
@@ -47,7 +47,7 @@
             "owner": "Cyprien",
             "price": "550.- CHF",
             "date": "22.03.2021",
-            "image": "data/images/offers/test1.jpg",
+            "image": "data\/images\/offers\/test1.jpg",
             "category": "home"
         },
         {
@@ -57,7 +57,7 @@
             "owner": "Cyprien",
             "price": "550.- CHF",
             "date": "22.03.2021",
-            "image": "data/images/offers/test1.jpg",
+            "image": "data\/images\/offers\/test1.jpg",
             "category": "home"
         },
         {
@@ -67,7 +67,7 @@
             "owner": "Cyprien",
             "price": "550.- CHF",
             "date": "22.03.2021",
-            "image": "data/images/offers/test1.jpg",
+            "image": "data\/images\/offers\/test1.jpg",
             "category": "home"
         },
         {
@@ -77,8 +77,18 @@
             "owner": "Cyprien",
             "price": "550.- CHF",
             "date": "22.03.2021",
-            "image": "data/images/offers/test1.jpg",
+            "image": "data\/images\/offers\/test1.jpg",
             "category": "home"
+        },
+        {
+            "id": "605863661a83d",
+            "title": "asd",
+            "email": "ben@b.b",
+            "price": "1",
+            "date": "22.03.2021",
+            "description": "dfsadfddd",
+            "images": [],
+            "category": ""
         }
     ]
 }

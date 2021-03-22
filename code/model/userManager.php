@@ -173,7 +173,15 @@ function getUserFromId($id)
     return $data;
 }
 
-function getUser() {
+function getUser($userAuth) {
+    $db = file_get_contents("data/users.json");
+    $json = json_decode($db, false);
 
+    foreach ($json->users as $item) {
+        if (($item->username == $userAuth) || ($item->email == $userAuth)) {
+            $data = array("username" => $item->username, "email" => $item->email);
+        }
+    }
+    return $data;
 }
 

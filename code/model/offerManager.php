@@ -14,11 +14,6 @@ function addOfferDB($offerData, $offerImages)
     $dataArray = prepareOfferArray($offerData, $imageLink);
     $success = insertOffer($dataArray, "data/offers.json");
 
-    $dataArray = prepareOfferArray($offerData, $imageLink);
-    $encodedData = json_encode($dataArray, JSON_PRETTY_PRINT);
-    $success = insertOffer($encodedData, "data/offers.json");
-
-
     // Always returns the numbers so the controler can manage errors
     return $success;
 
@@ -77,6 +72,7 @@ function prepareOfferArray($offerData, $offerImages)
     $dataArray = array(
         "id" => $id,
         "title" => $offerData['offerTitle'],
+        "email" => $_SESSION['email'],
         "price" => $offerData['offerPrice'],
         "date" => $date,
         "description" => $offerData['offerDescription'],
@@ -97,7 +93,6 @@ function insertOffer($data, $file)
 {
     $currentDataFile = file_get_contents($file);
     $currentData = json_decode($currentDataFile, true);
-
 
     array_push($currentData['offers'], $data);
 
