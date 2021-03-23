@@ -63,7 +63,7 @@ function register($userData) {
 
 }
 
-function login($userData) {
+function login($userData=null) {
     require_once "model/userManager.php";
 
     // Redirects the user to the home page if he's already logged in
@@ -131,6 +131,26 @@ function showProduct($offerId) {
     require_once "model/offerManager.php";
     $offerData = getOfferById($offerId);
     require "view/product.php";
+
+}
+
+function contactAnnouncer($formData, $offerId) {
+    require_once "model/offerManager.php";
+    if(isset($_SESSION['userLog'])) {
+        if(isset($formData)) {
+            //TODO found out how to send an e-mail
+            home();
+        }
+        else {
+            $offerData = getOfferById($offerId);
+            require "view/offer_contact.php";
+        }
+
+    }
+    else {
+        login();
+    }
+
 
 }
 // </editor-fold >

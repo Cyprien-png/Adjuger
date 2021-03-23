@@ -27,6 +27,9 @@ if (isset($_GET['action'])) {
         case 'showProduct':
             showProduct($_GET['id']);
             break;
+        case 'contactAnnouncer':
+            contactAnnouncer($_POST, $_GET['offerId']);
+            break;
         default:
             home();
     }
