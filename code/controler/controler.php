@@ -127,7 +127,12 @@ function addOffer($offerData) {
 
 }
 
+function showProduct($offerId) {
+    require_once "model/offerManager.php";
+    $offerData = getOfferById($offerId);
+    require "view/product.php";
 
+}
 // </editor-fold >
 
 // <editor-fold desc="Session" >

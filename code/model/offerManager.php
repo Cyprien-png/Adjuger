@@ -73,6 +73,7 @@ function prepareOfferArray($offerData, $offerImages)
         "id" => $id,
         "title" => $offerData['offerTitle'],
         "email" => $_SESSION['email'],
+        "username" => $_SESSION['username'],
         "price" => $offerData['offerPrice'],
         "date" => $date,
         "description" => $offerData['offerDescription'],
@@ -106,4 +107,16 @@ function insertOffer($data, $file)
     } else {
         return false;
     }
+}
+
+function getOfferById($id) {
+    $db = file_get_contents("data/offers.json");
+    $json = json_decode($db, false);
+
+    foreach ($json->offers as $item) {
+        if ($item->id == $id) {
+            $data = (array)$item;
+        }
+    }
+    return $data;
 }

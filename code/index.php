@@ -24,6 +24,9 @@ if (isset($_GET['action'])) {
         case 'addOffer':
             addOffer($_POST);
             break;
+        case 'showProduct':
+            showProduct($_GET['id']);
+            break;
         default:
             home();
     }

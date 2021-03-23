@@ -60,7 +60,7 @@ ob_start();
                             <a href="#"><img class="card-img-top" src="<?=$row->image ?>" alt=""></a>
                             <div class="card-body">
                                 <h4 class="card-title">
-                                    <a href="#" class="homeItems"><?=$row->title?></a>
+                                    <a href="index.php?action=showProduct&id=<?= $row->id ?>" class="homeItems"><?=$row->title?></a>
                                 </h4>
                                 <h5><?=$row->price?></h5>
                                 <p class="card-text"><?=$row->description?></p>
