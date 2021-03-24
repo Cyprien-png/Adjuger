@@ -41,6 +41,12 @@
             "email": "123435@qwe.f",
             "username": "TEST",
             "password": "$2y$10$w7SvLNMf1P2Dcz2SySBtUOpvavyo\/iP5g8RI6moVhGE7PXSFODtnO"
+        },
+        {
+            "id": "605b16813c484",
+            "email": "test@test.ch",
+            "username": "tester",
+            "password": "$2y$10$ec2Tbor3rhADiFl6MH4ddeK75bPVO1LcZnNNBY4R8\/k1Fnq14aENq"
         }
     ]
 }

@@ -18,6 +18,11 @@ function addOfferDB($offerData, $offerImages)
     return $success;
 
 }
+function check_file_uploaded_name ($filename)
+{
+    (bool) ((preg_match("`^[-0-9A-Z_\.]+$`i",$filename)) ? true : false);
+}
+
 
 function insertImages($images) {
     $imageName = uniqid();
@@ -33,10 +38,12 @@ function insertImages($images) {
             $nameExt = explode('.', $images['name']);
             switch ($nameExt[1]) {
                 case "jpg":
+                case "Jpg":
                 case "JPG":
                     $dest = "data/images/offers/$imageName.jpg";
                     break;
                 case "png":
+                case "Png":
                 case "PNG":
                     $dest = "data/images/offers/$imageName.png";
                     break;

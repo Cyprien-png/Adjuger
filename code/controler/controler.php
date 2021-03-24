@@ -113,7 +113,7 @@ function logout() {
 function addOffer($offerData) {
     require_once "model/offerManager.php";
     if(!isset($_SESSION['userLog'])) {
-        home();
+        login();
     }
     else {
         if(isset($offerData['offerTitle']) ) {
