@@ -7,7 +7,10 @@
             "owner": "Cyprien",
             "price": "350.- CHF",
             "date": "22.03.2021",
-            "image": "data\/images\/offers\/test.jpg",
+            "images": [
+                "data\/images\/offers\/test.jpg",
+                "data\/images\/offers\/test1.jpg"
+            ],
             "category": "photo"
         },
         {
