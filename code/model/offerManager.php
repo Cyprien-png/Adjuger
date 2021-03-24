@@ -20,38 +20,64 @@ function addOfferDB($offerData, $offerImages)
 }
 function check_file_uploaded_name ($filename)
 {
-    (bool) ((preg_match("`^[-0-9A-Z_\.]+$`i",$filename)) ? true : false);
+    return preg_match("`^[-0-9A-Z_\.]+$`i",$filename);
 }
 
 
 function insertImages($images) {
-    $imageName = uniqid();
 
-    $imagesLink = array();
 
     // https://www.php.net/manual/en/function.move-uploaded-file.php
 
     
-    foreach ($images["error"] as $key => $error) {
+//    foreach ($images["error"] as $key => $error) {
+//        if ($error == UPLOAD_ERR_OK) {
+//            $tmp_name = $images["tmp_name"][$key];
+//            $nameExt = explode('.', $images['name']);
+//            switch ($nameExt[1]) {
+//                case "jpg":
+//                case "Jpg":
+//                case "JPG":
+//                    $dest = "data/images/offers/$imageName.jpg";
+//                    break;
+//                case "png":
+//                case "Png":
+//                case "PNG":
+//                    $dest = "data/images/offers/$imageName.png";
+//                    break;
+//            }
+//            array_push($imagesLink, $dest);
+//            move_uploaded_file($tmp_name, $dest);
+//        }
+//    }
+
+    $imageName = uniqid();
+    $imagesLink = array();
+
+    foreach ($_FILES["offerImage"] as $key => $error) {
         if ($error == UPLOAD_ERR_OK) {
-            $tmp_name = $images["tmp_name"][$key];
-            $nameExt = explode('.', $images['name']);
-            switch ($nameExt[1]) {
+            $tmp_name = $_FILES["offerImage"]["tmp_name"][$key];
+            $nameExt = explode('.', $_FILES["offerImage"]['name'][$key]);
+            switch (end($nameExt)) {
                 case "jpg":
                 case "Jpg":
                 case "JPG":
-                    $dest = "data/images/offers/$imageName.jpg";
+                    $dest = "data/images/offers/".$imageName.".jpg";
                     break;
                 case "png":
                 case "Png":
                 case "PNG":
-                    $dest = "data/images/offers/$imageName.png";
+                    $dest = "data/images/offers/".$imageName.".png";
                     break;
             }
-            array_push($imagesLink, $dest);
+            $name = basename($_FILES["offerImage"]["name"][$key]);
+            //array_push($imagesLink, $dest);
+            $imagesLink[] = $dest;
             move_uploaded_file($tmp_name, $dest);
         }
     }
+
+
     return $imagesLink;
 
 }
@@ -60,14 +86,11 @@ function showOffers()
 {
     $ENCODED = file_get_contents("data/offers.json");
     $json = json_decode($ENCODED, false);
-    // $offerList = array(
-    //     '2310'      => $offers[2310],
-    //     '2311'      => $offers[2311]);
+
     $offersItmes = array();
     foreach ($json->offers as $item) {
         array_push($offersItmes, $item);
     }
-    /// echo $offers[2311]["name"];
     return $offersItmes;
 }
 

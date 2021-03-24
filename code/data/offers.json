@@ -23,163 +23,30 @@
             "images": [
                 "data\/images\/offers\/test1.jpg",
                 "data\/images\/offers\/test.jpg"
-                
             ],
             "category": "home"
         },
         {
-            "id": "124",
-            "title": "jardinier",
-            "description": "Je vous arrange vos jardins",
-            "owner": "Cyprien",
-            "price": "550.- CHF",
-            "date": "22.03.2021",
-            "images": [
-                "data\/images\/offers\/test1.jpg",
-                "data\/images\/offers\/test.jpg"
-                
-            ],
-            "category": "home"
+            "id": "605b87489ef7f",
+            "title": "yxc",
+            "email": "mega@mega.ch",
+            "username": "mega",
+            "price": "2",
+            "date": "24.03.2021",
+            "description": "123",
+            "images": [],
+            "category": "Electronics"
         },
         {
-            "id": "124",
-            "title": "jardinier",
-            "description": "Je vous arrange vos jardins",
-            "owner": "Cyprien",
-            "price": "550.- CHF",
-            "date": "22.03.2021",
-            "images": [
-                "data\/images\/offers\/test1.jpg",
-                "data\/images\/offers\/test.jpg"
-                
-            ],
-            "category": "home"
-        },
-        {
-            "id": "124",
-            "title": "jardinier",
-            "description": "Je vous arrange vos jardins",
-            "owner": "Cyprien",
-            "price": "550.- CHF",
-            "date": "22.03.2021",
-            "images": [
-                "data\/images\/offers\/test1.jpg",
-                "data\/images\/offers\/test.jpg"
-                
-            ],
-            "category": "home"
-        },
-        {
-            "id": "124",
-            "title": "jardinier",
-            "description": "Je vous arrange vos jardins",
-            "owner": "Cyprien",
-            "price": "550.- CHF",
-            "date": "22.03.2021",
-            "images": [
-                "data\/images\/offers\/test1.jpg",
-                "data\/images\/offers\/test.jpg"
-                
-            ],
-            "category": "home"
-        },
-        {
-            "id": "124",
-            "title": "jardinier",
-            "description": "Je vous arrange vos jardins",
-            "owner": "Cyprien",
-            "price": "550.- CHF",
-            "date": "22.03.2021",
-            "images": [
-                "data\/images\/offers\/test1.jpg",
-                "data\/images\/offers\/test.jpg"
-                
-            ],
-            "category": "home"
-        },
-        {
-            "id": "124",
-            "title": "jardinier",
-            "description": "Je vous arrange vos jardins",
-            "owner": "Cyprien",
-            "price": "550.- CHF",
-            "date": "22.03.2021",
-            "images": [
-                "data\/images\/offers\/test1.jpg",
-                "data\/images\/offers\/test.jpg"
-                
-            ],
-            "category": "home"
-        },
-        {
-            "id": "124",
-            "title": "jardinier",
-            "description": "Je vous arrange vos jardins",
-            "owner": "Cyprien",
-            "price": "550.- CHF",
-            "date": "22.03.2021",
-            "images": [
-                "data\/images\/offers\/test1.jpg",
-                "data\/images\/offers\/test.jpg"
-                
-            ],
-            "category": "home"
-        },
-        {
-            "id": "124",
-            "title": "jardinier",
-            "description": "Je vous arrange vos jardins",
-            "owner": "Cyprien",
-            "price": "550.- CHF",
-            "date": "22.03.2021",
-            "images": [
-                "data\/images\/offers\/test1.jpg",
-                "data\/images\/offers\/test.jpg"
-                
-            ],
-            "category": "home"
-        },
-        {
-            "id": "124",
-            "title": "jardinier",
-            "description": "Je vous arrange vos jardins",
-            "owner": "Cyprien",
-            "price": "550.- CHF",
-            "date": "22.03.2021",
-            "images": [
-                "data\/images\/offers\/test1.jpg",
-                "data\/images\/offers\/test.jpg"
-                
-            ],
-            "category": "home"
-        },
-        {
-            "id": "124",
-            "title": "jardinier",
-            "description": "Je vous arrange vos jardins",
-            "owner": "Cyprien",
-            "price": "550.- CHF",
-            "date": "22.03.2021",
-            "images": [
-                "data\/images\/offers\/test1.jpg",
-                "data\/images\/offers\/test.jpg"
-                
-            ],
-            "category": "home"
-        },
-        {
-            "id": "124",
-            "title": "jardinier",
-            "description": "Je vous arrange vos jardins",
-            "owner": "Cyprien",
-            "price": "550.- CHF",
-            "date": "22.03.2021",
-            "images": [
-                "data\/images\/offers\/test1.jpg",
-                "data\/images\/offers\/test.jpg"
-                
-            ],
-            "category": "home"
+            "id": "605b88f69a85c",
+            "title": "asfff",
+            "email": "mega@mega.ch",
+            "username": "mega",
+            "price": "2",
+            "date": "24.03.2021",
+            "description": "2",
+            "images": [],
+            "category": "Electronics"
         }
     ]
 }

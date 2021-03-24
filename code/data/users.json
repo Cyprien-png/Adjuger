@@ -47,6 +47,12 @@
             "email": "test@test.ch",
             "username": "tester",
             "password": "$2y$10$ec2Tbor3rhADiFl6MH4ddeK75bPVO1LcZnNNBY4R8\/k1Fnq14aENq"
+        },
+        {
+            "id": "605b786f4e729",
+            "email": "mega@mega.ch",
+            "username": "mega",
+            "password": "$2y$10$1jWE93.FaC30HVR879fHmuMhQVnSIDVa9\/OfB8uNyIa\/uQSaBd0Da"
         }
     ]
 }

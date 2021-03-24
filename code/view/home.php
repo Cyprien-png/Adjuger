@@ -1,6 +1,8 @@
 <?php
 $title = "Accueil";
 ob_start();
+print_r($_POST);
+print_r($_FILES);
 ?>
 
 <head>

@@ -127,8 +127,9 @@ function addOffer($offerData) {
     }
     else {
         if(isset($offerData['offerTitle']) ) {
-            addOfferDB($offerData, $_FILES['offerImage']);
+            addOfferDB($offerData, $_FILES);
             home();
+//            print_r($_FILES);
         }
         else {
             require "view/offer_add.php";
