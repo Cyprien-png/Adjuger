@@ -6,12 +6,13 @@ ob_start();
 <head>
     <link rel="stylesheet" href="view/css/style_add-offer.css">
 </head>
-<div class="container title bodyContent " id="content-wrap">
+<div class="title bodyContent " id="content-wrap">
     <br>
     <h2>Ajouter une offre</h2>
     <div class="list-group bordered center col-10 col-sm-8 col-md-8 col-lg-6">
         <form id="frmAddOffer" method="post" action="index.php?action=addOffer">
             <table>
+                <div class="container">
                 <br>
                 <tr>
                     <td><label for="txtOfferTitle">Titre : </label></td>
@@ -51,9 +52,9 @@ ob_start();
                         </select></td>
                 </tr>
                 <tr>
-                    <td><br><br><input type="submit" value="Poster l'annonce" id="btnSubmitSign"></td>
+                    <td id="right"><br><br><input class="nav-item nav-link active" type="submit" value="Poster l'annonce" id="btnSubmitSign"></td>
                 </tr>
-
+                </div>
             </table>
         </form>
     </div>

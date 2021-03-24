@@ -4,7 +4,7 @@ ob_start();
 ?>
 
 <head>
-    <link href="view/css/style_homepage.css" rel="styles heet">
+    <link href="css/style_homepage.css" rel="styles heet">
 </head>
 
 <div class="container" id="content-wrap">
@@ -54,7 +54,7 @@ ob_start();
  
             <div class="row">
 
-            <?php foreach ($items as $row) : $count++; ?>
+            <?php foreach ($items as $row): $count++; ?>
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
                             <a href="#"><img class="card-img-top" src="<?=$row->images[0] ?>" alt=""></a>
@@ -69,8 +69,9 @@ ob_start();
                             </div>
                         </div>
                     </div>
-                <?php if($count==6)break; endforeach; ?>
-
+                <?php if($count==$max)break; ?>
+            <?php endforeach; ?>
+            <a href="index.php?action=viewMore&max=<?=$max?>" class=" container"><button id="btnPlus" class="button-style btn btn-outline-success nav-item nav-link">Afficher plus</button></a>
             </div>
             <!-- /.row -->
 

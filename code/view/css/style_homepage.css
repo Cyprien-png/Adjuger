@@ -7,105 +7,110 @@
 
    
   
-  body, html{height:100%;}
-  body{
-    padding-top: 56px;
-  text-align:center;
-  }
-  
-  /* Id for set page position (and adapt footer) */
+ body, html{height:100%;}
+ body{
+   padding-top: 56px;
+ text-align:center;
+ }
+ 
+ /* Id for set page position (and adapt footer) */
 #content-wrap {
-  max-width:1280px;
-  min-height:100%;
-  margin:0 auto;
-  position:relative;
+ max-width:1280px;
+ min-height:100%;
+ margin:0 auto;
+ position:relative;
 }
 
 #required{
-  color: #990033;
+ color: #990033;
 }
 
 .title {
-  text-align: center;
-  margin-top: 4%;
+ text-align: center;
+ margin-top: 4%;
 }
 
+.button-style{
+ background-color:#8EE8B8;
+ color:black;
+ margin-bottom: 50px;
+}
 
 .bordered{
-  border-radius: 25px;
-  border: 2px solid #8EE8B8;
-  padding: 20px;
+ border-radius: 25px;
+ border: 2px solid #8EE8B8;
+ padding: 20px;
 
-  height: 500x;
-  align-content: center;
-  align-items: center;
+ height: 500x;
+ align-content: center;
+ align-items: center;
 }
 
 .center{
-  margin-left: auto;
-  margin-right: auto;
+ margin-left: auto;
+ margin-right: auto;
 }
 
 #header {
-  background-color: #8EE8B8;
+ background-color: #8EE8B8;
 }
 
 .img-fluid{
-  max-width: 100%;
-  height: auto;
+ max-width: 100%;
+ height: auto;
 }
 
 td{
-  padding-right: 15px;
+ padding-right: 15px;
 }
 
 #footer {
-  background-color: darkgrey;
+ background-color: darkgrey;
 }
 
 
 .card-footer {
-  background-color: #8EE8B8;
+ background-color: #8EE8B8;
 }
 
 #bouton{
-  float: right !important; 
+ float: right !important; 
 }
 
 .navLogo {
-  margin-top: 2%;
+ margin-top: 2%;
 }
 
 .navbar{
-  justify-content: space-evenly;
+ justify-content: space-evenly;
 }
 
 .logo{
-  position: relative;
-  width: 20%;
-  height: auto; 
+ position: relative;
+ width: 20%;
+ height: auto; 
 }
 .col-logo{
- align-items: center;
+align-items: center;
 }
 .col-btncoll{
-  float: right;
+ float: right;
 }
 
 .navbar{
-  align-items: baseline;
+ align-items: baseline;
 }
 
 .drop{
- justify-content: space-evenly;
-  width: 30%;
-  height: auto;
+justify-content: space-evenly;
+ width: 30%;
+ height: auto;
 }
 
 .list-group {
-  margin-top: 10%;
+ margin-top: 10%;
 }
 
 .homeItems {
-  color: #62AA5D;
+ color: #62AA5D;
 }

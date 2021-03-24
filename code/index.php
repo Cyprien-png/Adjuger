@@ -30,6 +30,9 @@ if (isset($_GET['action'])) {
         case 'contactAnnouncer':
             contactAnnouncer($_POST, $_GET['offerId']);
             break;
+        case 'viewMore':
+            viewMore($_GET['max']);
+            break;
         default:
             home();
     }

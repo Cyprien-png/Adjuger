@@ -3,6 +3,16 @@
 function home() {
     require_once "model/offerManager.php";
     $count = 0;
+    $max = 6;
+    $items = showOffers();
+    require "view/home.php";
+}
+
+function viewMore($max){
+    require_once "model/offerManager.php";
+    $count = 0;
+    $max = (int)$max;
+    $max = $max + 6;
     $items = showOffers();
     require "view/home.php";
 }

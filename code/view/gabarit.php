@@ -59,7 +59,7 @@
           <table class="container">
             <td><a href="/index.php?action=home" class="nav-item nav-link active">Accueil</a></td>
             <?php if(isset($_SESSION['email'])) :?>
-              <td><a href="#" class="nav-item nav-link ">Ajouter</a></td>
+              <td><a href="index.php?action=addOffer" class="nav-item nav-link  ">Ajouter</a></td>
             <?php endif;?>
             <td>
               <?php if (isset($_SESSION['userLog'])) : ?>
