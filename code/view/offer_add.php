@@ -38,15 +38,26 @@ ob_start();
                 <tr>
                     <td><input type="file" id="fileImage" name="offerImage[]" placeholder="Image (JPG, PNG)" multiple="multiple" required></td>
                 </tr>
+
                 <tr>
-                    <td><br><label for="cmbCategory">Catégorie</label><br></td>
+                    <td><br><label for="cmbType">Type : </label><br></td>
+                </tr>
+                <tr>
+                    <td><select name="offerType" id="cmbType">
+                           <option value="produit" selected>Produit</option>
+                           <option value="service" selected>Service</option>
+                        </select></td>
+                </tr>
+
+                <tr>
+                    <td><br><label for="cmbCategory">Catégorie : </label><br></td>
                 </tr>
                 <tr>
                     <td><select name="offerCategory" id="cmbCategory">
-                            <option value="Electronics" selected>Éléctronique</option>
-                            <option value="">Meuble</option>
-                            <option value="Discrete Mathematics">Vehicule</option>
-                            <option value="Discrete Mathematics">Vehicule</option>
+                            <option value="Éléctronique" selected>Éléctronique</option>
+                            <option value="Mobiler">Mobiler</option>
+                            <option value="Véhicule">Véhicule</option>
+                            <option value="Jouets">Jouets</option>
                             <option value="Discrete Mathematics">Vehicule</option>
                             <option value="Discrete Mathematics">Vehicule</option>
                         </select></td>

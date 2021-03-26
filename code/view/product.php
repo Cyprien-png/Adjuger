@@ -59,6 +59,7 @@ ob_start();
                 <!--/ Big description text area-->
 
                 <p>Annonceur : <?= $offerData['email'] ?></p>
+                <p>Type : <?= $offerData['type'] ?></p>
                 <p>Catégorie : <?= $offerData['category'] ?></p>
                 <p>Ajouté le : <?= $offerData['date'] ?></p>
 

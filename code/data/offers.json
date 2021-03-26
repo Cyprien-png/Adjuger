@@ -11,6 +11,7 @@
                 "data\/images\/offers\/test.jpg",
                 "data\/images\/offers\/test1.jpg"
             ],
+            "type": "service",
             "category": "photo"
         },
         {
@@ -24,6 +25,7 @@
                 "data\/images\/offers\/test1.jpg",
                 "data\/images\/offers\/test.jpg"
             ],
+            "type": "service",
             "category": "home"
         },
         {
@@ -36,6 +38,7 @@
             "images": [
                 "data\/images\/offers\/test1.jpg"
             ],
+            "type": "service",
             "category": "home"
         }
 

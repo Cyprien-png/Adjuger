@@ -108,6 +108,7 @@ function prepareOfferArray($offerData, $offerImages)
         "date" => $date,
         "description" => $offerData['offerDescription'],
         "images" => $offerImages,
+        "type" => $offerData['offerType'],
         "category" => $offerData['offerCategory']
     );
 
