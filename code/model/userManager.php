@@ -120,10 +120,11 @@ function checkLogin($userData) {
     $json = json_decode($db, false);
 
     foreach ($json->users as $item) {
-        if($item->username == $userAuth || $item->email== $userAuth ) {
+        if(($item->username == $userAuth) || ($item->email == $userAuth) ) {
             if (password_verify($userData['userInputPassword'], $item->password)) {
                 $_SESSION['userID'] = $item->id;
                 $userExists = true;
+                break;
             } else {
                 $userExists = false;
             }
