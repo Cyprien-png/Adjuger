@@ -69,6 +69,8 @@ function insertImages($images) {
                 case "PNG":
                     $dest = "data/images/offers/".$imageName.".png";
                     break;
+                default:
+                    $dest = "view/content/images/noPhoto.png";
             }
             $name = basename($_FILES["offerImage"]["name"][$key]);
             //array_push($imagesLink, $dest);
