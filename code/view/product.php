@@ -55,7 +55,7 @@ ob_start();
                 <p>Prix : <?= $offerData['price'] ?> CHF</p>
 
                 <!-- Big description text area-->
-                <p><?= $offerData['description'] ?></p>
+                <p>Description : <?= $offerData['description'] ?></p>
                 <!--/ Big description text area-->
 
                 <p>Annonceur : <?= $offerData['email'] ?></p>
@@ -67,6 +67,14 @@ ob_start();
             </div>
         </td>
     </table>
+
+    <?php if($offerData['email'] == $_SESSION['email']) : ?>
+    <div id="actionButtons">
+        <a href="index.php?action=deleteOffer&id=<?= $offerData['id'] ?>"><button class="alert-danger">Supprimer</button></a>
+        <a href="index.php?action=modifyOffer&id=<?= $offerData['id'] ?>"><button>Modifier</button></a>
+    </div>
+    <?php endif; ?>
+
 </div>
 
 <?php

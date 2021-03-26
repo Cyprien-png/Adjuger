@@ -147,7 +147,30 @@ function getOfferById($id) {
     foreach ($json->offers as $item) {
         if ($item->id == $id) {
             $data = (array)$item;
+            break;
         }
     }
     return $data;
+}
+
+function deleteOfferDB($offerId) {
+    $db = file_get_contents("data/offers.json");
+    $json = json_decode($db, true);
+
+    $success = false;
+
+    foreach ($json['offers'] as $item) {
+        if ($item['id'] == $offerId) {
+            $success = true;
+            unset($item);
+            break;
+        }
+    }
+    $newJson = json_encode($json, JSON_PRETTY_PRINT);
+
+    $file = fopen("data/offers.json", "w");
+    fwrite($file, $newJson);
+    fclose($file);
+
+    return $success;
 }

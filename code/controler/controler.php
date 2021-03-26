@@ -8,21 +8,12 @@ function home() {
     require "view/home.php";
 }
 
-function viewMore($max){
-    require_once "model/offerManager.php";
-    $count = 0;
-    $max = (int)$max;
-    $max = $max + 6;
-    $items = showOffers();
-    require "view/home.php";
-}
+
 
 // <editor-fold desc="Users" >
 function showUser() {
     require_once "model/userManager.php";
     if(isset($_SESSION['userLog'])) {
-
-
         $username = $_SESSION['username'];
         $email = $_SESSION['email'];
 
@@ -144,7 +135,15 @@ function showProduct($offerId) {
     require_once "model/offerManager.php";
     $offerData = getOfferById($offerId);
     require "view/product.php";
+}
 
+function viewMore($max){
+    require_once "model/offerManager.php";
+    $count = 0;
+    $max = (int)$max;
+    $max = $max + 6;
+    $items = showOffers();
+    require "view/home.php";
 }
 
 function contactAnnouncer($formData, $offerId=null) {
@@ -165,14 +164,28 @@ function contactAnnouncer($formData, $offerId=null) {
             }
             require "view/offer_contact.php";
         }
-
     }
     else {
         login();
     }
 
-
 }
+
+function deleteOffer($offerId) {
+    require_once "model/offerManager.php";
+    $success = deleteOfferDB($offerId);
+
+    if($success) {
+        home();
+    } else {
+        print("NO");
+    }
+}
+
+function modifyOffer($newData, $offerId) {
+    require_once "model/offerManager.php";
+}
+
 // </editor-fold >
 
 // <editor-fold desc="Session" >

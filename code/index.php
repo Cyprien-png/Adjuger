@@ -24,6 +24,12 @@ if (isset($_GET['action'])) {
         case 'addOffer':
             addOffer($_POST);
             break;
+        case 'deleteOffer':
+            deleteOffer($_GET['id']);
+            break;
+        case 'modifyOffer':
+            modifyOffer($_POST, $_GET['id']);
+            break;
         case 'showProduct':
             showProduct($_GET['id']);
             break;
