@@ -66,6 +66,7 @@
                 <a href="/index.php?action=user" class="navbar-brand">
                   <img src="/view/content/images/user_icon.png" height="28" alt="Adjuger">
                 </a>
+              <td ><p style="margin-bottom: 0;"><?=$_SESSION['username']?></p></td>
                
                 <!-- img-fluid -->
               <?php else : ?>

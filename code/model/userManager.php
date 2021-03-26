@@ -180,7 +180,7 @@ function getUser($userAuth) {
 
     foreach ($json->users as $item) {
         if (($item->username == $userAuth) || ($item->email == $userAuth)) {
-            $data = array("username" => $item->username, "email" => $item->email);
+            $data = (array)$item;
         }
     }
     return $data;
