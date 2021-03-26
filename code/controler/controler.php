@@ -150,6 +150,7 @@ function contactAnnouncer($formData, $offerId) {
     if(isset($_SESSION['userLog'])) {
         if(isset($formData)) {
             //TODO found out how to send an e-mail
+            mail($formData['contactFormTo'], $formData['contactFormObject'], $formData['contactFormMessage']);
             home();
         }
         else {

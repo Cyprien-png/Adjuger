@@ -53,6 +53,12 @@
             "email": "mega@mega.ch",
             "username": "mega",
             "password": "$2y$10$1jWE93.FaC30HVR879fHmuMhQVnSIDVa9\/OfB8uNyIa\/uQSaBd0Da"
+        },
+        {
+            "id": "605db2f91c756",
+            "email": "aga@aga.ch",
+            "username": "aga",
+            "password": "$2y$10$scbncUZz4bKIdd9Fy\/qUQu31VsULu9fVaPgBsfbnp1mjTpDYqF\/sy"
         }
     ]
 }

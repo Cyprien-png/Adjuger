@@ -39,7 +39,7 @@ print_r($_FILES);
                     </div>
                     <div class="carousel-item">
                         <img class="d-block img-fluid" src="view\content\images\Slogan2.png" alt="Second slide">
-                    </div>
+                    </div>-
                     <div class="carousel-item">
                         <img class="d-block img-fluid" src="view\content\images\Slogan3.png" alt="Third slide">
                     </div>
@@ -59,8 +59,7 @@ print_r($_FILES);
             <?php foreach ($items as $row): $count++; ?>
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="card h-100">
-                            <a href="#"><img class="card-img-top" src="<?=$row->images[0] ?>" alt=""></a>
-                            <div class="card-body">
+                            <a href="#"><img class="card-img-top" src="<?=$row->images[0] ?>" alt=""></a>                            <div class="card-body">
                                 <h4 class="card-title">
                                     <a href="index.php?action=showProduct&id=<?= $row->id ?>" class="homeItems"><?=$row->title?></a>
                                 </h4>
