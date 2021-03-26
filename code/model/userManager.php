@@ -101,6 +101,9 @@ function prepareUserArray($userData) {
         "id" => $id,
         "email" => $userData['userInputEmail'],
         "username" => $userData['userInputUsername'],
+        "npa" => $userData['userInputNPA'],
+        "city" => $userData['userInputCity'],
+        "address" => $userData['userInputAddress'],
         "password" => $userHashedPassword
     );
 
@@ -161,14 +164,14 @@ function searchUser($json, $field, $match) {
     return $result;
 }
 
-function getUserFromId($id)
+function getUserById($id)
 {
     $db = file_get_contents("data/users.json");
     $json = json_decode($db, false);
 
     foreach ($json->users as $item) {
         if ($item->id == $id) {
-            $data =  array("username" => $item->username, "email" => $item->email);
+            $data =  (array)$item;
         }
     }
     return $data;

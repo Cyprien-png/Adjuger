@@ -152,14 +152,17 @@ function contactAnnouncer($formData, $offerId=null) {
     if(isset($_SESSION['userLog'])) {
         if(isset($formData['contactFormTo'])) {
             //TODO found out how to send an e-mail
-            mail($formData['contactFormTo'], $formData['contactFormObject'], $formData['contactFormMessage']);
+            $user = getUserById($_SESSION['userID']);
+            $sender = "De : ".$user['username'] . "(".$user['email'].")";
+            $locaton = $user['address'] .", " . $user['npa'] ." " . $user['city'];
+            $message = "$sender : \n\n".$formData['contactFormMessage'] . "\n\n" . $locaton;
+            mail($formData['contactFormTo'], $formData['contactFormObject'], $message);
             home();
         }
         else {
             if(isset($offerId)) {
                 $offerData = getOfferById($offerId);
             }
-
             require "view/offer_contact.php";
         }
 

@@ -1,64 +1,13 @@
 {
     "users": [
         {
-            "id": "604f11f6624d4",
-            "email": "c@c.c",
-            "username": "c",
-            "password": "$2y$10$XQhg0zRcVi7aNW4jFe7d1uAurRSGRE4FVNEbBWHWQFRgmqnM\/DI92"
-        },
-        {
-            "id": "604f135bd914b",
-            "email": "axel.pittet@cpnv.ch",
-            "username": "tamaman",
-            "password": "$2y$10$KiRbyfQ5ra8jddJ\/TdnveO2YJf\/d66yFy4SOsHTjveiTfgfkgMaYS"
-        },
-        {
-            "id": "604f18df6725b",
-            "email": "v@v.v",
-            "username": "v",
-            "password": "$2y$10$vPmV61jmfdI5yB.xo5TaQOoil7WtZ27\/ySpDVNL7PJwXYW8zPZv5m"
-        },
-        {
-            "id": "604f19fb34638",
+            "id": "605e3ea3c4e96",
             "email": "a@a.a",
             "username": "a",
-            "password": "$2y$10$pBRKT.qeQTt.z9.DMBvZ5.OPQOXeAnCvETUM7oIYsNEnTyB0R5.eC"
-        },
-        {
-            "id": "605b0c4339bcf",
-            "email": "Cyprien.Jaquier@cpnv.ch",
-            "username": "Cyprien",
-            "password": "$2y$10$dspolDWsfp7CQUfvjgl5vex.EUPjaGIh8HFIBBOMUg.pTpxNCabeK"
-        },
-        {
-            "id": "60585716e815e",
-            "email": "ben@b.b",
-            "username": "ben",
-            "password": "$2y$10$Um4C6NCzjVfpSMpIDox3i.OBD83WIT..Nqt8Hrh9IW88YGH81zDUW"
-        },
-        {
-            "id": "605866d696c08",
-            "email": "123435@qwe.f",
-            "username": "TEST",
-            "password": "$2y$10$w7SvLNMf1P2Dcz2SySBtUOpvavyo\/iP5g8RI6moVhGE7PXSFODtnO"
-        },
-        {
-            "id": "605b16813c484",
-            "email": "test@test.ch",
-            "username": "tester",
-            "password": "$2y$10$ec2Tbor3rhADiFl6MH4ddeK75bPVO1LcZnNNBY4R8\/k1Fnq14aENq"
-        },
-        {
-            "id": "605b786f4e729",
-            "email": "mega@mega.ch",
-            "username": "mega",
-            "password": "$2y$10$1jWE93.FaC30HVR879fHmuMhQVnSIDVa9\/OfB8uNyIa\/uQSaBd0Da"
-        },
-        {
-            "id": "605db2f91c756",
-            "email": "aga@aga.ch",
-            "username": "aga",
-            "password": "$2y$10$scbncUZz4bKIdd9Fy\/qUQu31VsULu9fVaPgBsfbnp1mjTpDYqF\/sy"
+            "npa": "1430",
+            "city": "A-les-bains",
+            "address": "Rue du A",
+            "password": "$2y$10$Kr1reeO6H3\/SbfAg4W0tPuxl7nhhzEsNLQQz7JJFjUK9Ts3fXPgce"
         }
     ]
 }

@@ -12,7 +12,7 @@ ob_start();
 <div class="container" id="content-wrap">
 
     <br>
-    <h2>Register</h2>
+    <h2>Inscription</h2>
 
 
     <div class="list-group bordered center col-10 col-sm-8 col-md-8 col-lg-6">
@@ -26,6 +26,28 @@ ob_start();
                 <tr>
                     <td><input type="email" id="txtEmail" name="userInputEmail" required></td>
                 </tr>
+
+                <tr>
+                    <td><label for="txtNPA">NPA* : </label></td>
+                </tr>
+                <tr>
+                    <td><input type="number" id="txtNPA" name="userInputNPA" required></td>
+                </tr>
+
+                <tr>
+                    <td><label for="txtCity">Ville* : </label></td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="txtCity" name="userInputCity" required></td>
+                </tr>
+
+                <tr>
+                    <td><label for="txtAdress">Adresse* : </label></td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="txtAddress" name="userInputAddress" required></td>
+                </tr>
+
                 <tr>
                     <td><label for="txtUsername">Nom d'utilisateur* : </label></td>
                 </tr>
