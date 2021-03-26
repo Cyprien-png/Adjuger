@@ -147,16 +147,19 @@ function showProduct($offerId) {
 
 }
 
-function contactAnnouncer($formData, $offerId) {
+function contactAnnouncer($formData, $offerId=null) {
     require_once "model/offerManager.php";
     if(isset($_SESSION['userLog'])) {
-        if(isset($formData)) {
+        if(isset($formData['contactFormTo'])) {
             //TODO found out how to send an e-mail
             mail($formData['contactFormTo'], $formData['contactFormObject'], $formData['contactFormMessage']);
             home();
         }
         else {
-            $offerData = getOfferById($offerId);
+            if(isset($offerId)) {
+                $offerData = getOfferById($offerId);
+            }
+
             require "view/offer_contact.php";
         }
 
