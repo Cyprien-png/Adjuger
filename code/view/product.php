@@ -1,22 +1,30 @@
 <?php
 $title = "Annonce";
 ob_start();
-$i = 0;
 ?>
-
+<head>
+    <link href="css/style_products.css" rel="styles heet">
+</head>
 
 
     <!-- Maybe change this into an item carousel ?-->
 <!--    <img alt="image de l'annonce" src=//= $offerData['image'] ?>-->
-
-    <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+<div calss="conatiner" id="content-wrap"> 
+    <table>
+        <td>
+    <div id="carouselExampleIndicators" class="carousel slide my-4 img-fluid" style="max-width:600px; height: 500px"  data-ride="carousel">
         <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <?php foreach($offerData['images'] as $image) : $j++?>
+        <li data-target="#carouselExampleIndicators" data-slide-to="<?=$j?>"
+            <?php if($j == 1) :?>
+                class="active"></li>
+                <?php else: ?>
+                    ></li>
+                    <?php endif; ?>
+                    <?php $j++; endforeach; ?>
         </ol>
 
-        <div class="carousel-inner" role="listbox">
+        <div class="carousel-inner"role="listbox">
             <?php foreach($offerData['images'] as $image) : $i++?>
             <?php if($i == 1) :?>
                 <div class="carousel-item active">
@@ -29,7 +37,7 @@ $i = 0;
             <?php endforeach; ?>
         </div>
 
-    </div>
+    
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
@@ -39,12 +47,14 @@ $i = 0;
         <span class="sr-only">Next</span>
     </a>
     </div>
+    </td>
+    <td>
     <!--Make those buttons round-->
 <!--    <button id="btnSwitchLeft"><</button>-->
 <!--    <button id="btnSwitchRight">></button>-->
     <!--/Make those buttons round-->
-
-    <h5><?= $offerData['title'] ?></h5>
+    <div id="text-content">
+    <h1><?= $offerData['title'] ?></h1>
 
     <p>Prix : <?= $offerData['price'] ?> CHF</p>
 
@@ -52,12 +62,14 @@ $i = 0;
     <p><?= $offerData['description'] ?></p>
     <!--/ Big description text area-->
 
-    <p>Annonceur : <?= $offerData['email'] ?></p>
+    <p>Annonceur : <?= $offerData['owner'] ?></p>
     <p>Catégorie : <?= $offerData['category'] ?></p>
     <p>Ajouté le : <?= $offerData['date'] ?></p>
 
     <a href="index.php?action=contactAnnouncer&offerId=<?= $offerData['id'] ?>"><button>Contacter</button></a>
-
+    </div>
+    </td></table>
+    </div>
 <?php
 $content = ob_get_clean();
 require "view/gabarit.php";

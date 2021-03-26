@@ -139,6 +139,8 @@ function addOffer($offerData) {
 }
 
 function showProduct($offerId) {
+    $i=0;
+    $j=0;
     require_once "model/offerManager.php";
     $offerData = getOfferById($offerId);
     require "view/product.php";
