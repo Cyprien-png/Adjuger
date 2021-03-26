@@ -62,7 +62,7 @@ ob_start();
                                 <h4 class="card-title">
                                     <a href="index.php?action=showProduct&id=<?= $row->id ?>" class="homeItems"><?=$row->title?></a>
                                 </h4>
-                                <h5><?=$row->price?></h5>
+                                <h5><?=$row->price?> CHF</h5>
                                 <p class="card-text"><?=$row->description?></p>
                             </div>
                             <div class="card-footer">

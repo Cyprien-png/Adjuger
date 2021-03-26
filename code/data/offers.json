@@ -4,8 +4,8 @@
             "id": "123",
             "title": "Photographe",
             "description": "Je vous fait des shootings",
-            "owner": "Cyprien",
-            "price": "350.- CHF",
+            "email": "Cyprien.jaquier@cpnv.ch",
+            "price": "350",
             "date": "22.03.2021",
             "images": [
                 "data\/images\/offers\/test.jpg",
@@ -17,8 +17,8 @@
             "id": "124",
             "title": "jardinier",
             "description": "Je vous arrange vos jardins",
-            "owner": "Cyprien",
-            "price": "550.- CHF",
+            "email": "Cyprien.jaquier@cpnv.ch",
+            "price": "550",
             "date": "22.03.2021",
             "images": [
                 "data\/images\/offers\/test1.jpg",
@@ -27,11 +27,11 @@
             "category": "home"
         },
         {
-            "id": "124",
+            "id": "125",
             "title": "test",
             "description": "Je vous arrange vos jardins",
-            "owner": "Cyprien",
-            "price": "550.- CHF",
+            "email": "Cyprien.jaquier@cpnv.ch",
+            "price": "550",
             "date": "22.03.2021",
             "images": [
                 "data\/images\/offers\/test1.jpg"
