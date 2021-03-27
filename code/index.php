@@ -22,7 +22,7 @@ if (isset($_GET['action'])) {
             logout();
             break;
         case 'addOffer':
-            addOffer($_POST);
+            addOffer($_POST, $_FILES);
             break;
         case 'deleteOffer':
             deleteOffer($_GET['id']);

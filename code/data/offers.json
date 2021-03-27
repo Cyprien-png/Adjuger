@@ -29,41 +29,28 @@
             "category": "home"
         },
         {
-            "id": "125",
-            "title": "test",
-            "description": "Je vous arrange vos jardins",
-            "email": "Cyprien.jaquier@cpnv.ch",
-            "price": "550",
-            "date": "22.03.2021",
-            "images": [
-                "data\/images\/offers\/test1.jpg"
-            ],
-            "type": "service",
-            "category": "home"
-        },
-        {
-            "id": "605e476ab032d",
-            "title": "Test a",
-            "email": "a@a.a",
-            "username": "a",
-            "price": "12",
-            "date": "26.03.2021",
-            "description": "aa",
-            "images": [],
-            "type": "service",
-            "category": "Mobiler"
-        },
-        {
-            "id": "605e4e0927c25",
-            "title": "sdf",
+            "id": "605f7fbec4ff4",
+            "title": "asfff",
             "email": "a@a.a",
             "username": "a",
             "price": "123",
-            "date": "26.03.2021",
-            "description": "asdf",
+            "date": "27.03.2021",
+            "description": "asd",
             "images": [],
             "type": "service",
-            "category": "\u00c9l\u00e9ctronique"
+            "category": "Electronique"
+        },
+        {
+            "id": "605f8006a90bc",
+            "title": "asdf",
+            "email": "a@a.a",
+            "username": "a",
+            "price": "12",
+            "date": "27.03.2021",
+            "description": "ad",
+            "images": [],
+            "type": "service",
+            "category": "Electronique"
         }
     ]
 }

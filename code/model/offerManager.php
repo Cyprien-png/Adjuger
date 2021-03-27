@@ -28,36 +28,13 @@ function insertImages($images) {
 
 
     // https://www.php.net/manual/en/function.move-uploaded-file.php
-
-    
-//    foreach ($images["error"] as $key => $error) {
-//        if ($error == UPLOAD_ERR_OK) {
-//            $tmp_name = $images["tmp_name"][$key];
-//            $nameExt = explode('.', $images['name']);
-//            switch ($nameExt[1]) {
-//                case "jpg":
-//                case "Jpg":
-//                case "JPG":
-//                    $dest = "data/images/offers/$imageName.jpg";
-//                    break;
-//                case "png":
-//                case "Png":
-//                case "PNG":
-//                    $dest = "data/images/offers/$imageName.png";
-//                    break;
-//            }
-//            array_push($imagesLink, $dest);
-//            move_uploaded_file($tmp_name, $dest);
-//        }
-//    }
-
     $imageName = uniqid();
     $imagesLink = array();
 
-    foreach ($_FILES["offerImage"] as $key => $error) {
-        if ($error == UPLOAD_ERR_OK) {
-            $tmp_name = $_FILES["offerImage"]["tmp_name"][$key];
-            $nameExt = explode('.', $_FILES["offerImage"]['name'][$key]);
+    foreach ($_FILES["offerImage"] as $image) {
+//        if ($image['error'] == UPLOAD_ERR_OK) {
+            $tmp_name = $image["tmp_name"];
+            $nameExt = explode('.', $image['name']);
             switch (end($nameExt)) {
                 case "jpg":
                 case "Jpg":
@@ -72,12 +49,41 @@ function insertImages($images) {
                 default:
                     $dest = "view/content/images/noPhoto.png";
             }
-            $name = basename($_FILES["offerImage"]["name"][$key]);
+            $name = basename($image["name"]);
             //array_push($imagesLink, $dest);
+            //$dest = "view/content/images/noPhoto.png";
             $imagesLink[] = $dest;
             move_uploaded_file($tmp_name, $dest);
-        }
+//        }
     }
+
+
+
+//    foreach ($_FILES["offerImage"]["error"] as $key => $error) {
+//        if ($error == UPLOAD_ERR_OK) {
+//            $tmp_name = $_FILES["offerImage"]["tmp_name"][$key];
+//            $nameExt = explode('.', $_FILES["offerImage"]['name'][$key]);
+//            switch (end($nameExt)) {
+//                case "jpg":
+//                case "Jpg":
+//                case "JPG":
+//                    $dest = "data/images/offers/".$imageName.".jpg";
+//                    break;
+//                case "png":
+//                case "Png":
+//                case "PNG":
+//                    $dest = "data/images/offers/".$imageName.".png";
+//                    break;
+//                default:
+//                    $dest = "view/content/images/noPhoto.png";
+//            }
+//            $name = basename($_FILES["offerImage"]["name"][$key]);
+//            //array_push($imagesLink, $dest);
+//            $dest = "view/content/images/noPhoto.png";
+//            $imagesLink[] = $dest;
+//            move_uploaded_file($tmp_name, $dest);
+//        }
+//    }
 
 
     return $imagesLink;

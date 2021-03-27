@@ -111,18 +111,25 @@ function logout() {
 // </editor-fold>
 
 // <editor-fold desc="Offers" >
-function addOffer($offerData) {
+function addOffer($offerData, $offerImages) {
     require_once "model/offerManager.php";
     if(!isset($_SESSION['userLog'])) {
         login();
     }
     else {
-        if(isset($offerData['offerTitle']) ) {
-            addOfferDB($offerData, $_FILES);
-            home();
-//            print_r($_FILES);
+        if(isset($offerData['offerTitle']) && isset($offerImages['offerImage'])) {
+            $success = addOfferDB($offerData, $offerImages);
+            if($success) {
+                home();
+            }
+            else {
+                $OfferErr = true;
+                print_r($offerImages);
+                require "view/offer_add.php";
+            }
         }
         else {
+            print_r($offerImages);
             require "view/offer_add.php";
         }
     }
