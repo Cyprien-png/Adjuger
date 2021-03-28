@@ -33,7 +33,7 @@ ob_start();
                     <td><textarea id="txtDescription" name="offerDescription"></textarea></td>
                 </tr>
                 <tr>
-                    <td><br><label for="fileImage[]">Image(s) : </label></td>
+                    <td><br><label for="fileImage">Image(s) : </label></td>
                 </tr>
                 <tr>
                     <td><input type="file" id="fileImage" name="offerImage" placeholder="Image (JPG, PNG)" multiple="multiple" required></td>

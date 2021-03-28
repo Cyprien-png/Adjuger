@@ -191,6 +191,16 @@ function deleteOffer($offerId) {
 
 function modifyOffer($newData, $offerId) {
     require_once "model/offerManager.php";
+    $oldData = getOfferById($offerId);
+    if(isset($newData)) {
+        modifyOfferDB($oldData, $newData, $offerId);
+    }
+    else {
+
+        require "view/offer_modify";
+    }
+
+
 }
 
 // </editor-fold >

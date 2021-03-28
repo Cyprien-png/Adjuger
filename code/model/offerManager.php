@@ -5,13 +5,14 @@
  * @description Calls all the needed functions to insert the user data into the json offers file.
  * @param $offerData array The POST data from the register form.
  * @param $offerImages array The POST data from the register form.
+ * @param $offerImages string ID of the offer if we want a specific one.
  * @return int Returns the numbers from verifyRegister().
  * */
-function addOfferDB($offerData, $offerImages)
+function addOfferDB($offerData, $offerImages, $offerId=null)
 {
     $imageLink = insertImages($offerImages);
 
-    $dataArray = prepareOfferArray($offerData, $imageLink);
+    $dataArray = prepareOfferArray($offerData, $imageLink, $offerId);
     $success = insertOffer($dataArray, "data/offers.json");
 
     // Always returns the numbers so the controler can manage errors
@@ -25,8 +26,6 @@ function check_file_uploaded_name ($filename)
 
 
 function insertImages($images) {
-
-
     // https://www.php.net/manual/en/function.move-uploaded-file.php
     $imageName = uniqid();
     $imagesLink = array();
@@ -102,9 +101,20 @@ function showOffers()
     return $offersItmes;
 }
 
-function prepareOfferArray($offerData, $offerImages)
+function modifyOfferDB($oldData, $newData, $offerId) {
+    deleteOfferDB($offerId);
+    addOfferDB($newData, $newData['offerImage'], $offerId);
+}
+
+function prepareOfferArray($offerData, $offerImages, $offerId=null)
 {
-    $id = uniqid();
+    if(isset($offerId)) {
+        $id = $offerId;
+    }
+    else {
+        $id = uniqid();
+    }
+
     $date = date('d.m.Y');
 
     $dataArray = array(
