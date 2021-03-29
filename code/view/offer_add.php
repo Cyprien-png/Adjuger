@@ -33,7 +33,7 @@ ob_start();
                 </tr>
                 <tr>
                     <td><textarea id="txtDescription" name="offerDescription" maxLength="500"></textarea>
-                        <div id="the-count_description" style="">
+                        <div id="the-count_description">
                             <span id="current_description">0</span>
                             <span id="maximum_description"> / 500</span></td></td>
                 </tr>

@@ -17,6 +17,15 @@
             "city": "d",
             "address": "d",
             "password": "$2y$10$bGu3iy.jbOyCSZ8vruoWYe3Hbl\/PXj59day3e6DBvrwbqLWcKC6ti"
+        },
+        {
+            "id": "60621b379a2f6",
+            "email": "Cyprien.jaquier@cpnv.ch",
+            "username": "Cyprien",
+            "npa": "123",
+            "city": "steCroix",
+            "address": "rue de lecole",
+            "password": "$2y$10$0haAx4B0pql\/2WtLXfwg8OZxGWUzUVkbGPjv3iHShA34CN2pQwnaG"
         }
     ]
 }

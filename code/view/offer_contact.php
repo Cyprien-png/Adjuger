@@ -3,23 +3,48 @@ $title = "Annonce";
 ob_start();
 ?>
 
-<form action="index.php?action=contactAnnouncer" method="POST">
+<div class="container" id="content-wrap">
+    <br><br><br>
+    <div class="bordered center col-10 col-sm-8 col-md-8 col-lg-6">
+        <div>
+            <form action="index.php?action=contactAnnouncer" method="POST">
 
-    <!--  Maybe just put a <p> markdown-->
-    <label for="txtTo">À : </label>
-    <input id="txtTo" name="contactFormTo" value="<?= $offerData['email']?>" required>
+                <!--  Maybe just put a <p> markdown-->
+                <label for="txtTo"><b>À :</b> </label>
+                <input id="txtTo" name="contactFormTo" value="<?= $offerData['email'] ?>" required>
 
-    <p>Produit :<?= $offerData['title']?></p>
+                <p><br><b>Produit :</b><?= $offerData['title'] ?></p>
 
-    <label for="txtObject">Objet : </label>
-    <input id="txtObject" name="contactFormObject" required>
-
-    <label for="txtMessage">Message : </label>
-    <input id="txtMessage" name="contactFormMessage" required>
-
-    <input type="submit" id="btnSubmit">
-</form>
-
+                <table class="center">
+                    <tr>
+                        <td>
+                            <label for="txtObject"><b>Objet</b> </label>
+                        </td>
+                        <td>
+                            <input size="16" id="txtObject" name="contactFormObject" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="txtMessage"><b>Message</b></label>
+                        </td>
+                        <td>
+                            <textarea style="vertical-align:bottom;" id="txtMessage" name="contactFormMessage" maxLength="500" required></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <td></td>
+                        <td>
+                        <br>
+                            <input type="submit" id="btnSubmit">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
 <?php
 $content = ob_get_clean();
 require "view/gabarit.php";
