@@ -3,6 +3,33 @@
     height: 500px;
 }
 
-#text-content{
+#description{
+    align-content: center;
+    vertical-align: top;
+    
+}
+
+#contact-button{
+    float: right;
+    vertical-align: bottom;
+}
+
+#button{
+    vertical-align: bottom;
+}
+
+.carousel-indicators{
+    /* position: relative; */
+}
+
+#slide-button{
+    
+    float: top;
+    vertical-align: top;
+    position: relative;
+}
+
+.text-content{
+    text-align: left;
     margin-left: 20px;
 }
