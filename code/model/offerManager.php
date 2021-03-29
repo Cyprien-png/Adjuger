@@ -57,6 +57,7 @@ function insertImages($images) {
     return $imagesLink;
 }
 
+
 function showOffers()
 {
     $ENCODED = file_get_contents("data/offers.json");
@@ -65,6 +66,20 @@ function showOffers()
     $offersItmes = array();
     foreach ($json->offers as $item) {
         array_push($offersItmes, $item);
+    }
+    return $offersItmes;
+}
+
+function showSearch($key)
+{
+    $ENCODED = file_get_contents("data/offers.json");
+    $json = json_decode($ENCODED, false);
+
+    $offersItmes = array();
+    foreach ($json->offers as $item) {
+        if($item->category == $key){
+        array_push($offersItmes, $item);
+        }
     }
     return $offersItmes;
 }

@@ -1,10 +1,14 @@
 <?php
 
-function home() {
+function home($search) {
     require_once "model/offerManager.php";
     $count = 0;
     $max = 6;
-    $items = showOffers();
+    if ($search!= 0){
+        $items = $search;
+    }else{
+        $items = showOffers();
+    }
     require "view/home.php";
 }
 
@@ -134,6 +138,12 @@ function addOffer($offerData, $offerImages) {
         }
     }
 
+}
+
+function searching($key){
+    require_once "model/offerManager.php";
+    $items = showSearch($key);
+    home($items);
 }
 
 function showProduct($offerId) {

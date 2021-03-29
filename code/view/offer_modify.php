@@ -75,12 +75,16 @@ ob_start();
                         </tr>
                         <tr>
                             <td><select name="offerCategory" id="cmbCategory">
-                                    <option value="Electronique" selected>Éléctronique</option>
-                                    <option value="Mobiler">Mobiler</option>
-                                    <option value="Vehicule">Véhicule</option>
-                                    <option value="Jouets">Jouets</option>
-                                    <option value="Discrete Mathematics">Vehicule</option>
-                                    <option value="Discrete Mathematics">Vehicule</option>
+                            <option value="Electronique" selected>Éléctronique</option>
+                            <option value="Mobiler">Mobiler</option>
+                            <option value="Vehicule">Véhicule</option>
+                            <option value="Jardin">Jardin</option>
+                            <option value="Habits">Habits</option>
+                            <option value="Jeux">Jeux</option>
+                            <option value="Livres">Livres</option>
+                            <option value="Maison">Maison</option>
+                            <option value="Photo">Photo</option>
+                            <option value="Autre">Autre</option>
                                 </select></td>
                         </tr>
                         <tr>

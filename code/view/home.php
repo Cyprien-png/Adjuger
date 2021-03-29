@@ -13,9 +13,14 @@ ob_start();
         <div class="col-lg-3">
 
             <div class="list-group">
-                <a href="#" class="list-group-item">Category 1</a>
-                <a href="#" class="list-group-item">Category 2</a>
-                <a href="#" class="list-group-item">Category 3</a>
+            <a href="index.php?action=searching&search=cuisine" class="list-group-item">Cuisine</a>
+            <a href="index.php?action=searching&search=Électronique>" class="list-group-item">Électronique</a>
+            <a href="index.php?action=searching&search=Habits" class="list-group-item">Habits</a>
+            <a href="index.php?action=searching&search=Jardin" class="list-group-item">Jardin</a>
+            <a href="index.php?action=searching&search=Jeux" class="list-group-item">Jeux</a>
+            <a href="index.php?action=searching&search=Livres" class="list-group-item">Livres</a>
+            <a href="index.php?action=searching&search=Maison" class="list-group-item">Maison</a>
+            <a href="index.php?action=searching&search=Photo" class="list-group-item">Photo</a>
             </div>
 
         </div>

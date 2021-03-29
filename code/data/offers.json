@@ -12,7 +12,7 @@
                 "data\/images\/offers\/test1.jpg"
             ],
             "type": "service",
-            "category": "photo"
+            "category": "Photo"
         },
         {
             "id": "124",
@@ -26,7 +26,21 @@
                 "data\/images\/offers\/test.jpg"
             ],
             "type": "service",
-            "category": "home"
+            "category": "Maison"
+        },
+        {
+            "id": "125  ",
+            "title": "jardinier",
+            "description": "Je vous arrange vos jardins",
+            "email": "Benjamin.muminovic@cpnv.ch",
+            "price": "550",
+            "date": "22.03.2021",
+            "images": [
+                "data\/images\/offers\/test1.jpg",
+                "data\/images\/offers\/test.jpg"
+            ],
+            "type": "service",
+            "category": "Jeux"
         }
     ]
 }

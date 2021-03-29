@@ -8,6 +8,15 @@
             "city": "A-les-bains",
             "address": "Rue du A",
             "password": "$2y$10$Kr1reeO6H3\/SbfAg4W0tPuxl7nhhzEsNLQQz7JJFjUK9Ts3fXPgce"
+        },
+        {
+            "id": "606192534eae5",
+            "email": "123@gmail.com",
+            "username": "cpnv",
+            "npa": "213",
+            "city": "d",
+            "address": "d",
+            "password": "$2y$10$bGu3iy.jbOyCSZ8vruoWYe3Hbl\/PXj59day3e6DBvrwbqLWcKC6ti"
         }
     ]
 }
