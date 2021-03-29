@@ -5,6 +5,7 @@ ob_start();
 
 <head>
     <link rel="stylesheet" href="view/css/style_add-offer.css">
+    <script src="view/js/limitChar.js"></script>
 </head>
 <div class="title bodyContent " id="content-wrap">
     <br>
@@ -28,9 +29,13 @@ ob_start();
                 </tr>
                 <tr>
                     <td><label for="txtDescription">Description : </label></td>
+
                 </tr>
                 <tr>
-                    <td><textarea id="txtDescription" name="offerDescription"></textarea></td>
+                    <td><textarea id="txtDescription" name="offerDescription" maxLength="500"></textarea>
+                        <div id="the-count_description" style="">
+                            <span id="current_description">0</span>
+                            <span id="maximum_description"> / 500</span></td></td>
                 </tr>
                 <tr>
                     <td><br><label for="fileImage">Image(s) : </label></td>
@@ -81,6 +86,7 @@ ob_start();
         </form>
     </div>
 </div>
+
 
 <?php
 $content = ob_get_clean();

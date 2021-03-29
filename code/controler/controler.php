@@ -1,6 +1,6 @@
 <?php
 
-function home($search) {
+function home($search=null) {
     require_once "model/offerManager.php";
     $count = 0;
     $max = 6;

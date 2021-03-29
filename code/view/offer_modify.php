@@ -6,7 +6,7 @@ ob_start();
     <head>
         <link rel="stylesheet" href="view/css/style_add-offer.css">
 
-
+        <script src="view/js/limitChar.js"></script>
         <script > //src="view/js/SearchCategory.js"
             $( document ).ready(function() {
                 var category = <?php echo $oldData['category']?>;
@@ -46,7 +46,10 @@ ob_start();
                             <td><label for="txtDescription">Description : </label></td>
                         </tr>
                         <tr>
-                            <td><textarea id="txtDescription" name="offerDescription" ><?= $oldData['description'] ?></textarea></td>
+                            <td><textarea id="txtDescription" name="offerDescription" ><?= $oldData['description'] ?></textarea>
+                                <div id="the-count_description" style="">
+                                    <span id="current_description">0</span>
+                                    <span id="maximum_description"> / 500</span></td></td></td>
                         </tr>
                         <tr>
                             <td><br><label for="fileImage">Image(s) : </label></td>
