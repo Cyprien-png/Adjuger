@@ -203,9 +203,9 @@ function modifyOffer($newData, $images, $offerId=NULL) {
     require_once "model/offerManager.php";
 
     //$a=$offerId;
-    if(isset($offerId)) {
-        $oldData = getOfferById($offerId);
-    }
+
+    $oldData = getOfferById($offerId);
+
     if(isset($newData['offerTitle'])) {
         modifyOfferDB($newData, $images, $offerId);
         home();
