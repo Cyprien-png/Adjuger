@@ -194,10 +194,10 @@ function modifyOffer($newData, $offerId) {
     $oldData = getOfferById($offerId);
     if(isset($newData)) {
         modifyOfferDB($oldData, $newData, $offerId);
+        home();
     }
     else {
-
-        require "view/offer_modify";
+        require "view/offer_modify.php";
     }
 
 

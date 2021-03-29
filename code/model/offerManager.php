@@ -145,10 +145,13 @@ function deleteOfferDB($offerId) {
 
     $success = false;
 
-    foreach ($json['offers'] as $item) {
+    foreach ($json['offers'] as $key=>$item) {
         if ($item['id'] == $offerId) {
             $success = true;
-            unset($item);
+            foreach ($item['images'] as $images) {
+                unlink($images);
+            }
+            unset($json['offers'][$key]);
             break;
         }
     }
