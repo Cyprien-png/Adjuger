@@ -11,9 +11,9 @@ ob_start();
 
                 <!--  Maybe just put a <p> markdown-->
                 <label for="txtTo"><b>À :</b> </label>
-                <input id="txtTo" name="contactFormTo" value="<?= $offerData['email'] ?>" required>
+                <input id="txtTo" name="contactFormTo" value="<?=htmlspecialchars($offerData['email'])?>" required>
 
-                <p><br><b>Produit :</b><?= $offerData['title'] ?></p>
+                <p><br><b>Produit :</b><<?=htmlspecialchars($row->title)?></p>
 
                 <table class="center">
                     <tr>

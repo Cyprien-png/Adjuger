@@ -61,17 +61,17 @@ ob_start();
         <div class="col-lg-5 col-md-6 mb-4" id="description">
             <div class="text-content">
                 <br>
-                <h1><?= $offerData['title'] ?></h1>
+                <h1><?=htmlspecialchars($row->title)?></h1>
                 <p><b>Prix :</b> <?= $offerData['price'] ?> CHF</p>
                 <!-- Big description text area-->
-                <p><b>Description :</b> <?= $offerData['description'] ?></p>
+                <p><b>Description :</b> <?= htmlspecialchars($row->description) ?></p>
                 <!--/ Big description text area-->
             </div>
         </div>
 
 
         <div class="text-content col-lg-4 col-md-6 mb-4">
-            <p><b>Annonceur :</b> <?= $offerData['email'] ?></p>
+            <p><b>Annonceur :</b> <?=htmlspecialchars($offerData['email'])?></p>
             <p><b>Type :</b> <?= $offerData['type'] ?></p>
             <p><b>Catégorie :</b> <?= $offerData['category'] ?></p>
             <p><b>Ajouté le :</b> <?= $offerData['date'] ?></p>

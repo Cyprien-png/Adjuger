@@ -38,13 +38,13 @@ ob_start();
 
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                        <img class="d-block img-fluid" src="view\content\images\Slogan1.png" alt="First slide">
+                        <img class="img-fluid" src="view\content\images\Slogan1.png" alt="First slide">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block img-fluid" src="view\content\images\Slogan2.png" alt="Second slide">
+                        <img class="img-fluid" src="view\content\images\Slogan2.png" alt="Second slide">
                     </div>-
                     <div class="carousel-item">
-                        <img class="d-block img-fluid" src="view\content\images\Slogan3.png" alt="Third slide">
+                        <img class="img-fluid" src="view\content\images\Slogan3.png" alt="Third slide">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -65,10 +65,10 @@ ob_start();
                             <a href="index.php?action=showProduct&id=<?= $row->id ?>"><img class="card-img-top" src="<?=$row->images[0] ?>" alt="" ></a>
                             <div class="card-body">
                                 <h4 class="card-title">
-                                    <a href="index.php?action=showProduct&id=<?= $row->id ?>" class="homeItems"><?=$row->title?></a>
+                                    <a href="index.php?action=showProduct&id=<?= $row->id ?>" class="homeItems"><?=htmlspecialchars($row->title)?></a>
                                 </h4>
                                 <h5><?=$row->price?> CHF</h5>
-                                <p class="card-text"><?=$row->description?></p>
+                                <p class="card-text"><?= htmlspecialchars($row->description) ?></p>
                             </div>
                             <div class="card-footer">
                             </div>

@@ -1,20 +1,6 @@
 {
-    "offers": [
-        {
-            "id": "123",
-            "title": "Photographe",
-            "description": "Je vous fait des shootings",
-            "email": "Cyprien.jaquier@cpnv.ch",
-            "price": "350",
-            "date": "22.03.2021",
-            "images": [
-                "data\/images\/offers\/test.jpg",
-                "data\/images\/offers\/test1.jpg"
-            ],
-            "type": "service",
-            "category": "Photo"
-        },
-        {
+    "offers": {
+        "1": {
             "id": "124",
             "title": "jardinier",
             "description": "Je vous arrange vos jardins",
@@ -28,7 +14,7 @@
             "type": "service",
             "category": "Maison"
         },
-        {
+        "2": {
             "id": "125  ",
             "title": "jardinier",
             "description": "Je vous arrange vos jardins",
@@ -41,6 +27,34 @@
             ],
             "type": "service",
             "category": "Jeux"
+        },
+        "3": {
+            "id": "123",
+            "title": "Photographe",
+            "email": "Cyprien.jaquier@cpnv.ch",
+            "username": "Cyprien",
+            "price": "450",
+            "date": "29.03.2021",
+            "description": "Je vous fait des shootings",
+            "images": [
+                "view\/content\/images\/noPhoto.png"
+            ],
+            "type": "service",
+            "category": "Electronique"
+        },
+        "4": {
+            "id": "606236d212a3b",
+            "title": "<script>alert(\"TEST\")<\/script>",
+            "email": "Cyprien.jaquier@cpnv.ch",
+            "username": "Cyprien",
+            "price": "213",
+            "date": "29.03.2021",
+            "description": "dkjasdkj",
+            "images": [
+                "data\/images\/offers\/606236d2122c5.png"
+            ],
+            "type": "produit",
+            "category": "Livres"
         }
-    ]
+    }
 }
