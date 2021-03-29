@@ -28,7 +28,7 @@ if (isset($_GET['action'])) {
             deleteOffer($_GET['id']);
             break;
         case 'modifyOffer':
-            modifyOffer($_POST, $_GET['id']);
+            modifyOffer($_POST, $_FILES, $_GET['id']);
             break;
         case 'showProduct':
             showProduct($_GET['id']);

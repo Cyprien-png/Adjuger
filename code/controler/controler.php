@@ -185,15 +185,19 @@ function deleteOffer($offerId) {
     if($success) {
         home();
     } else {
-        print("NO");
+        print("Problème de suppression");
     }
 }
 
-function modifyOffer($newData, $offerId) {
+function modifyOffer($newData, $images, $offerId=NULL) {
     require_once "model/offerManager.php";
-    $oldData = getOfferById($offerId);
-    if(isset($newData)) {
-        modifyOfferDB($oldData, $newData, $offerId);
+
+    //$a=$offerId;
+    if(isset($offerId)) {
+        $oldData = getOfferById($offerId);
+    }
+    if(isset($newData['offerTitle'])) {
+        modifyOfferDB($newData, $images, $offerId);
         home();
     }
     else {

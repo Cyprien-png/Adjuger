@@ -26,7 +26,7 @@ ob_start();
         <br>
         <h2>Modifier une offre</h2>
         <div class="list-group bordered center col-10 col-sm-8 col-md-8 col-lg-6">
-            <form id="frmAddOffer" method="post" action="index.php?action=addOffer" enctype="multipart/form-data">
+            <form id="frmAddOffer" method="post" action="index.php?action=modifyOffer" enctype="multipart/form-data">
                 <table>
                     <div class="container">
                         <br>
@@ -49,10 +49,10 @@ ob_start();
                             <td><textarea id="txtDescription" name="offerDescription" ><?= $oldData['description'] ?></textarea></td>
                         </tr>
                         <tr>
-                            <td><br><label for="fileImage[]">Image(s) : </label></td>
+                            <td><br><label for="fileImage">Image(s) : </label></td>
                         </tr>
                         <tr>
-                            <td><input type="file" id="fileImage" name="offerImage" placeholder="Image (JPG, PNG)" multiple="multiple" required></td>
+                            <td><input type="file" id="fileImage" name="offerImage[]" placeholder="Image (JPG, PNG)" multiple="multiple" required></td>
                         </tr>
 
                         <tr>

@@ -69,9 +69,9 @@ function showOffers()
     return $offersItmes;
 }
 
-function modifyOfferDB($oldData, $newData, $offerId) {
+function modifyOfferDB($newData, $images,$offerId) {
     deleteOfferDB($offerId);
-    addOfferDB($newData, $newData['offerImage'], $offerId);
+    addOfferDB($newData, $images, $offerId);
 }
 
 function prepareOfferArray($offerData, $offerImages, $offerId=null)
@@ -149,7 +149,9 @@ function deleteOfferDB($offerId) {
         if ($item['id'] == $offerId) {
             $success = true;
             foreach ($item['images'] as $images) {
-                unlink($images);
+                if($images != "view/content/images/noPhoto.png") {
+                    unlink($images);
+                }
             }
             unset($json['offers'][$key]);
             break;
