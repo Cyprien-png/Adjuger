@@ -85,7 +85,7 @@ function showSearch($key)
 }
 
 function modifyOfferDB($newData, $images,$offerId) {
-    deleteOfferDB($offerId);
+    deleteOfferDB($offerId, true);
     addOfferDB($newData, $images, $offerId);
 }
 
@@ -154,7 +154,7 @@ function getOfferById($id) {
     return $data;
 }
 
-function deleteOfferDB($offerId) {
+function deleteOfferDB($offerId, $noImageDel=false) {
     $db = file_get_contents("data/offers.json");
     $json = json_decode($db, true);
 
@@ -165,7 +165,9 @@ function deleteOfferDB($offerId) {
             $success = true;
             foreach ($item['images'] as $images) {
                 if($images != "view/content/images/noPhoto.png") {
-                    unlink($images);
+                    if(!$noImageDel) {
+                        unlink($images);
+                    }
                 }
             }
             unset($json['offers'][$key]);

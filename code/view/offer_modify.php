@@ -26,7 +26,7 @@ ob_start();
         <br>
         <h2>Modifier une offre</h2>
         <div class="list-group bordered center col-10 col-sm-8 col-md-8 col-lg-6">
-            <form id="frmAddOffer" method="post" action="index.php?action=modifyOffer" enctype="multipart/form-data">
+            <form id="frmAddOffer" method="post" action="index.php?action=modifyOffer&id=<?= $oldData['id'] ?>" enctype="multipart/form-data">
                 <table>
                     <div class="container">
                         <br>
