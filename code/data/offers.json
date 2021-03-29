@@ -27,30 +27,6 @@
             ],
             "type": "service",
             "category": "home"
-        },
-        {
-            "id": "605f7fbec4ff4",
-            "title": "asfff",
-            "email": "a@a.a",
-            "username": "a",
-            "price": "123",
-            "date": "27.03.2021",
-            "description": "asd",
-            "images": [],
-            "type": "service",
-            "category": "Electronique"
-        },
-        {
-            "id": "605f8006a90bc",
-            "title": "asdf",
-            "email": "a@a.a",
-            "username": "a",
-            "price": "12",
-            "date": "27.03.2021",
-            "description": "ad",
-            "images": [],
-            "type": "service",
-            "category": "Electronique"
         }
     ]
 }

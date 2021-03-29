@@ -36,7 +36,7 @@ ob_start();
                     <td><br><label for="fileImage">Image(s) : </label></td>
                 </tr>
                 <tr>
-                    <td><input type="file" id="fileImage" name="offerImage" placeholder="Image (JPG, PNG)" multiple="multiple" required></td>
+                    <td><input type="file" id="fileImage" name="offerImage[]" placeholder="Image (JPG, PNG)" multiple="multiple" required></td>
                 </tr>
 
                 <tr>

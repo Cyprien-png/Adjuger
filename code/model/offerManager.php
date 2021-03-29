@@ -19,21 +19,15 @@ function addOfferDB($offerData, $offerImages, $offerId=null)
     return $success;
 
 }
-function check_file_uploaded_name ($filename)
-{
-    return preg_match("`^[-0-9A-Z_\.]+$`i",$filename);
-}
-
 
 function insertImages($images) {
-    // https://www.php.net/manual/en/function.move-uploaded-file.php
-    $imageName = uniqid();
     $imagesLink = array();
 
-    foreach ($_FILES["offerImage"] as $image) {
-//        if ($image['error'] == UPLOAD_ERR_OK) {
-            $tmp_name = $image["tmp_name"];
-            $nameExt = explode('.', $image['name']);
+    foreach ($images["offerImage"]["error"] as $key => $error) {
+        $imageName = uniqid();
+        if ($error == UPLOAD_ERR_OK) {
+            $tmp_name = $images["offerImage"]["tmp_name"][$key];
+            $nameExt = explode('.', $images["offerImage"]['name'][$key]);
             switch (end($nameExt)) {
                 case "jpg":
                 case "Jpg":
@@ -46,47 +40,21 @@ function insertImages($images) {
                     $dest = "data/images/offers/".$imageName.".png";
                     break;
                 default:
+                    $err = true;
                     $dest = "view/content/images/noPhoto.png";
             }
-            $name = basename($image["name"]);
-            //array_push($imagesLink, $dest);
-            //$dest = "view/content/images/noPhoto.png";
             $imagesLink[] = $dest;
-            move_uploaded_file($tmp_name, $dest);
-//        }
+            if(!isset($err)) {
+                move_uploaded_file($tmp_name, $dest);
+            }
+            unset($imageName);
+        }
+        else {
+            $imagesLink[] = "view/content/images/noPhoto.png";
+        }
     }
 
-
-
-//    foreach ($_FILES["offerImage"]["error"] as $key => $error) {
-//        if ($error == UPLOAD_ERR_OK) {
-//            $tmp_name = $_FILES["offerImage"]["tmp_name"][$key];
-//            $nameExt = explode('.', $_FILES["offerImage"]['name'][$key]);
-//            switch (end($nameExt)) {
-//                case "jpg":
-//                case "Jpg":
-//                case "JPG":
-//                    $dest = "data/images/offers/".$imageName.".jpg";
-//                    break;
-//                case "png":
-//                case "Png":
-//                case "PNG":
-//                    $dest = "data/images/offers/".$imageName.".png";
-//                    break;
-//                default:
-//                    $dest = "view/content/images/noPhoto.png";
-//            }
-//            $name = basename($_FILES["offerImage"]["name"][$key]);
-//            //array_push($imagesLink, $dest);
-//            $dest = "view/content/images/noPhoto.png";
-//            $imagesLink[] = $dest;
-//            move_uploaded_file($tmp_name, $dest);
-//        }
-//    }
-
-
     return $imagesLink;
-
 }
 
 function showOffers()
