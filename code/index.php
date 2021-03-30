@@ -35,7 +35,7 @@ if (isset($_GET['action'])) {
             showProduct($_GET['id']);
             break;
         case 'contactAnnouncer':
-            contactAnnouncer($_POST, $_GET['offerId']);
+            contactAnnouncer($_POST, $_GET['id']);
             break;
         case 'viewMore':
             viewMore($_GET['max']);

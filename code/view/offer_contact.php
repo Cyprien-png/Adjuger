@@ -1,19 +1,21 @@
 <?php
-$title = "Annonce";
+$title = "Contacter";
 ob_start();
 ?>
 
 <div class="container" id="content-wrap">
+    <br>
+    <h2>Contacter</h2>
     <br><br><br>
     <div class="bordered center col-10 col-sm-8 col-md-8 col-lg-6">
         <div>
-            <form action="index.php?action=contactAnnouncer" method="POST">
+            <form action="index.php?action=contactAnnouncer&id=<?=htmlspecialchars($offerData['id'])?>" method="POST">
 
                 <!--  Maybe just put a <p> markdown-->
                 <label for="txtTo"><b>À :</b> </label>
                 <input id="txtTo" name="contactFormTo" value="<?=htmlspecialchars($offerData['email'])?>" required>
 
-                <p><br><b>Produit :</b><<?=htmlspecialchars($row->title)?></p>
+                <p><br><b>Produit :</b>  <?=$offerData['title']?> </p>
 
                 <table class="center">
                     <tr>

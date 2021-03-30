@@ -41,20 +41,6 @@
             ],
             "type": "service",
             "category": "Electronique"
-        },
-        "4": {
-            "id": "606236d212a3b",
-            "title": "<script>alert(\"TEST\")<\/script>",
-            "email": "Cyprien.jaquier@cpnv.ch",
-            "username": "Cyprien",
-            "price": "213",
-            "date": "29.03.2021",
-            "description": "dkjasdkj",
-            "images": [
-                "data\/images\/offers\/606236d2122c5.png"
-            ],
-            "type": "produit",
-            "category": "Livres"
         }
     }
 }

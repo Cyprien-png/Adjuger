@@ -11,9 +11,9 @@ ob_start();
     <br>
 
 
-    <div class="col-lg-7 col-md-10 col-sm-12 col-12 mb-4">
+    <div class="col-lg-7 col-md-10 col-sm-12 col-12 mb-4" id="bigleft">
         
-        <div id="carouselExampleIndicators" class="carousel slide my-4 img-fluid mb-4" style="max-width:600px; height: auto" data-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide my-4 img-fluid mb-4"  data-ride="carousel">
             <ol class="carousel-indicators">
                 <?php foreach ($offerData['images'] as $image) : $j++ ?>
                     <li data-target="#carouselExampleIndicators" data-slide-to="<?= $j ?>" <?php if ($j == 1) : ?> class="active"></li>
@@ -30,15 +30,15 @@ ob_start();
                     <?php if ($i == 1) : ?>
                         <div class="carousel-item active">
                         <?php else : ?>
-                            <div class="carousel-item">
+                            <div class="carousel-item" >
                             <?php endif; ?>
-                            <img class="d-block img-fluid" src='<?= $image ?>' alt="Slide <?= $i ?>">
+                            <img class="d-block img-fluid images-content" src='<?= $image ?>' alt="Slide <?= $i ?>">
                             </div>
                         <?php endforeach; ?>
                         <br><br><br><br><br><br>
-                        <div id="slide-button">
+                        <div id="slide-button" style="margin-top: 110px">
                             <?php if ($i > 1) : ?>
-                                <a class="carousel-control-prev col-lg-3 col-md-6" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                <a class="carousel-control-prev col-lg-3 col-md-6" href="#carouselExampleIndicators" role="button" data-slide="prev" >
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Previous</span>
                                 </a>
@@ -50,10 +50,6 @@ ob_start();
                         </div>
 
                         </div>
-
-
-                        
-
             </div>
         </div>
 
@@ -61,10 +57,10 @@ ob_start();
         <div class="col-lg-5 col-md-6 mb-4" id="description">
             <div class="text-content">
                 <br>
-                <h1><?=htmlspecialchars($row->title)?></h1>
+                <h1><?=htmlspecialchars($offerData['title'])?></h1>
                 <p><b>Prix :</b> <?= $offerData['price'] ?> CHF</p>
                 <!-- Big description text area-->
-                <p><b>Description :</b> <?= htmlspecialchars($row->description) ?></p>
+                <p><b>Description :</b> <?= htmlspecialchars($offerData['description']) ?></p>
                 <!--/ Big description text area-->
             </div>
         </div>
@@ -78,7 +74,7 @@ ob_start();
         </div>
 
         <div class="col-lg-1 col-md-6 mb-4" id="button">
-            <a id="contact-button" href="index.php?action=contactAnnouncer&offerId=<?= $offerData['id'] ?>"><button>Contacter</button></a>
+            <a id="contact-button" href="index.php?action=contactAnnouncer&id=<?= $offerData['id'] ?>"><button>Contacter</button></a>
         </div>
 
 

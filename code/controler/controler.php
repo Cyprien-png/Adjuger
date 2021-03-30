@@ -165,14 +165,22 @@ function viewMore($max){
 
 function contactAnnouncer($formData, $offerId=null) {
     require_once "model/offerManager.php";
+    require_once "model/userManager.php";
     if(isset($_SESSION['userLog'])) {
         if(isset($formData['contactFormTo'])) {
             //TODO found out how to send an e-mail
             $user = getUserById($_SESSION['userID']);
-            $sender = "De : ".$user['username'] . "(".$user['email'].")";
+            //$sender = "De : ".$user['username'] . "(".$user['email'].")";
             $locaton = $user['address'] .", " . $user['npa'] ." " . $user['city'];
-            $message = "$sender : \n\n".$formData['contactFormMessage'] . "\n\n" . $locaton;
-            mail($formData['contactFormTo'], $formData['contactFormObject'], $message);
+            $message = $formData['contactFormMessage'] . "\n\n" . $locaton;
+            //mail($formData['contactFormTo'], $formData['contactFormObject'], $message);
+            $mailInfo = array(
+                "mailTo" => $formData['contactFormTo'],
+                "subject" => $formData['contactFormObject'],
+                "body" => $message
+            );
+
+            emailSending($mailInfo);
             home();
         }
         else {
@@ -185,8 +193,75 @@ function contactAnnouncer($formData, $offerId=null) {
     else {
         login();
     }
-
 }
+
+function emailSending($infoMail)
+{
+
+    require_once "PHPMailer/PHPMailerAutoload.php";
+    require_once "PHPMailer/src/PHPMailer.php";
+    require_once "PHPMailer/src/SMTP.php";
+    require_once "PHPMailer/src/Exception.php";
+
+    $mail = new PHPMailer();
+
+    $mail->isSMTP();
+    $mail->CharSet = 'UTF-8';
+    $mail->Host = "SMTP.office365.com";
+    $mail->SMTPAuth = true;
+    $mail->Username = "cpnv.webannonce2021@outlook.com";
+    $mail->Password = "nffPBj3JsRqw5xi";
+    $mail->Port = "587";
+    $mail->SMTPSecure = "starttls";
+
+    $mail->addReplyTo($_SESSION['email']);
+
+    $mail->From = "cpnv.webannonce2021@outlook.com";
+    $mail->FromName = "Web Annonce";
+    $mail->addAddress($infoMail['mailTo']);
+    $mail->Subject = ($infoMail['subject']);
+    $mail->Body = $infoMail['body'];
+
+    $mail->send();
+
+    // -----------------------------
+//    $emailDenvoi = "cpnv.webannonce2021@outlook.com";
+//    $password = "nffPBj3JsRqw5xi";
+//
+//
+//    $port = 587;
+//    $SMTPSecure = "starttls";
+//
+//
+//    $emailFrom = $_SESSION['userEmailAddress']; //Celui qui envoi le message
+//    $subject = $message['titreAnnonce']; //L'objet du mail
+//    $body = $message['message']; // le message
+//
+////Le destinataire
+//    $emailTo = $infoMail['mailTo'];
+//
+//    $mail = new PHPMailer();
+//
+//    $mail->isSMTP();
+//    $mail->CharSet = 'UTF-8';
+//    $mail->Host = $host;
+//    $mail->SMTPAuth = true;
+//    $mail->Username = $emailDenvoi;
+//    $mail->Password = $password;
+//    $mail->Port = 587;
+//    $mail->SMTPSecure = $SMTPSecure;
+//
+//    $mail->From = $emailDenvoi;
+//    $mail->FromName = "Web Annonce";
+//    $mail->addReplyTo($emailFrom);
+//
+//    $mail->addAddress($emailTo);
+//    $mail->Subject = $infoMail['subject'];
+//    $mail->Body = $body;
+//
+//    $mail->send();
+}
+
 
 function deleteOffer($offerId) {
     require_once "model/offerManager.php";

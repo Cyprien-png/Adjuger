@@ -26,6 +26,15 @@
             "city": "steCroix",
             "address": "rue de lecole",
             "password": "$2y$10$0haAx4B0pql\/2WtLXfwg8OZxGWUzUVkbGPjv3iHShA34CN2pQwnaG"
+        },
+        {
+            "id": "6063590a3d1b8",
+            "email": "benjamin.muminovic@cpnv.ch",
+            "username": "Ben",
+            "npa": "1400",
+            "city": "Yve",
+            "address": "asdf",
+            "password": "$2y$10$lqactsitXwxKxvmuOSROmelaEeGyXUS1XtauEkar3wCsXypBuUaQe"
         }
     ]
 }
