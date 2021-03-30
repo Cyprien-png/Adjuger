@@ -2,13 +2,12 @@
 
 session_start();
 require "controler/controler.php";
-$nothing =0;
 
 if (isset($_GET['action'])) {
     $action = $_GET['action'];
     switch ($action) {
         case 'home':
-            home($nothing);
+            home();
             break;
         case 'user':
             showUser();
@@ -44,8 +43,8 @@ if (isset($_GET['action'])) {
             searching($_GET['search']);
             break;
         default:
-            home($nothing);
+            home();
     }
 } else {
-    home($nothing);
+    home();
 }
