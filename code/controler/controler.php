@@ -1,26 +1,30 @@
 <?php
 
-function home($search=null) {
+function home() {
     require_once "model/offerManager.php";
     $count = 0;
     $max = 6;
-    if ($search!= 0){
-        $items = $search;
-    }else{
-        $items = showOffers();
-    }
+    $items = showOffers();
     require "view/home.php";
 }
 
-
+function homeSearch($search) {
+    require_once "model/offerManager.php";
+    $count = 0;
+    $max = 6;
+    $items = $search;
+    require "view/home.php";
+}
 
 // <editor-fold desc="Users" >
 function showUser() {
     require_once "model/userManager.php";
     if(isset($_SESSION['userLog'])) {
+        $type = 1;
         $username = $_SESSION['username'];
         $email = $_SESSION['email'];
-
+        require_once "model/offerManager.php";
+        $items = showSearch($email, $type);
         require "view/user_page.php";
     }
     else {
@@ -140,10 +144,10 @@ function addOffer($offerData, $offerImages) {
 
 }
 
-function searching($key){
+function searching($key, $type){
     require_once "model/offerManager.php";
-    $items = showSearch($key);
-    home($items);
+    $items = showSearch($key, $type);
+    homeSearch($items);
 }
 
 function showProduct($offerId) {

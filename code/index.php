@@ -2,13 +2,14 @@
 
 session_start();
 require "controler/controler.php";
-$nothing =0;
+
+$category = "2";
 
 if (isset($_GET['action'])) {
     $action = $_GET['action'];
     switch ($action) {
         case 'home':
-            home($nothing);
+            home();
             break;
         case 'user':
             showUser();
@@ -41,11 +42,11 @@ if (isset($_GET['action'])) {
             viewMore($_GET['max']);
             break;
         case 'searching':
-            searching($_GET['search']);
+            searching($_GET['search'], $category);
             break;
         default:
-            home($nothing);
+            home();
     }
 } else {
-    home($nothing);
+    home();
 }

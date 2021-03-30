@@ -8,7 +8,7 @@
  * @param $offerImages string ID of the offer if we want a specific one.
  * @return int Returns the numbers from verifyRegister().
  * */
-function addOfferDB($offerData, $offerImages, $offerId=null)
+function addOfferDB($offerData, $offerImages, $offerId = null)
 {
     $imageLink = insertImages($offerImages);
 
@@ -17,10 +17,10 @@ function addOfferDB($offerData, $offerImages, $offerId=null)
 
     // Always returns the numbers so the controler can manage errors
     return $success;
-
 }
 
-function insertImages($images) {
+function insertImages($images)
+{
     $imagesLink = array();
 
     foreach ($images["offerImage"]["error"] as $key => $error) {
@@ -32,24 +32,23 @@ function insertImages($images) {
                 case "jpg":
                 case "Jpg":
                 case "JPG":
-                    $dest = "data/images/offers/".$imageName.".jpg";
+                    $dest = "data/images/offers/" . $imageName . ".jpg";
                     break;
                 case "png":
                 case "Png":
                 case "PNG":
-                    $dest = "data/images/offers/".$imageName.".png";
+                    $dest = "data/images/offers/" . $imageName . ".png";
                     break;
                 default:
                     $err = true;
                     $dest = "view/content/images/noPhoto.png";
             }
             $imagesLink[] = $dest;
-            if(!isset($err)) {
+            if (!isset($err)) {
                 move_uploaded_file($tmp_name, $dest);
             }
             unset($imageName);
-        }
-        else {
+        } else {
             $imagesLink[] = "view/content/images/noPhoto.png";
         }
     }
@@ -70,31 +69,40 @@ function showOffers()
     return $offersItmes;
 }
 
-function showSearch($key)
+function showSearch($key, $type)
 {
     $ENCODED = file_get_contents("data/offers.json");
     $json = json_decode($ENCODED, false);
 
     $offersItmes = array();
     foreach ($json->offers as $item) {
-        if($item->category == $key){
-        array_push($offersItmes, $item);
+        switch ($type) {
+            case 1:
+                if ($item->email == $key) {
+                    array_push($offersItmes, $item);
+                }
+                break;
+            case 2:
+                if ($item->category == $key) {
+                    array_push($offersItmes, $item);
+                }
+                break;
         }
     }
     return $offersItmes;
 }
 
-function modifyOfferDB($newData, $images,$offerId) {
+function modifyOfferDB($newData, $images, $offerId)
+{
     deleteOfferDB($offerId, true);
     addOfferDB($newData, $images, $offerId);
 }
 
-function prepareOfferArray($offerData, $offerImages, $offerId=null)
+function prepareOfferArray($offerData, $offerImages, $offerId = null)
 {
-    if(isset($offerId)) {
+    if (isset($offerId)) {
         $id = $offerId;
-    }
-    else {
+    } else {
         $id = uniqid();
     }
 
@@ -141,7 +149,8 @@ function insertOffer($data, $file)
     }
 }
 
-function getOfferById($id) {
+function getOfferById($id)
+{
     $db = file_get_contents("data/offers.json");
     $json = json_decode($db, false);
 
@@ -154,18 +163,19 @@ function getOfferById($id) {
     return $data;
 }
 
-function deleteOfferDB($offerId, $noImageDel=false) {
+function deleteOfferDB($offerId, $noImageDel = false)
+{
     $db = file_get_contents("data/offers.json");
     $json = json_decode($db, true);
 
     $success = false;
 
-    foreach ($json['offers'] as $key=>$item) {
+    foreach ($json['offers'] as $key => $item) {
         if ($item['id'] == $offerId) {
             $success = true;
             foreach ($item['images'] as $images) {
-                if($images != "view/content/images/noPhoto.png") {
-                    if(!$noImageDel) {
+                if ($images != "view/content/images/noPhoto.png") {
+                    if (!$noImageDel) {
                         unlink($images);
                     }
                 }
