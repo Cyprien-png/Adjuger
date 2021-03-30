@@ -20,9 +20,11 @@ function homeSearch($search) {
 function showUser() {
     require_once "model/userManager.php";
     if(isset($_SESSION['userLog'])) {
+        $type = 1;
         $username = $_SESSION['username'];
         $email = $_SESSION['email'];
-
+        require_once "model/offerManager.php";
+        $items = showSearch($email, $type);
         require "view/user_page.php";
     }
     else {
@@ -142,9 +144,9 @@ function addOffer($offerData, $offerImages) {
 
 }
 
-function searching($key){
+function searching($key, $type){
     require_once "model/offerManager.php";
-    $items = showSearch($key);
+    $items = showSearch($key, $type);
     homeSearch($items);
 }
 

@@ -55,6 +55,20 @@
             ],
             "type": "produit",
             "category": "Livres"
+        },
+        "5": {
+            "id": "60636fbc79ff5",
+            "title": "test",
+            "email": "Cyprien.jaquier@cpnv.ch",
+            "username": "Cyprien",
+            "price": "23",
+            "date": "30.03.2021",
+            "description": null,
+            "images": [
+                "data\/images\/offers\/60636fbc78c04.png"
+            ],
+            "type": "service",
+            "category": "Mobiler"
         }
     }
 }

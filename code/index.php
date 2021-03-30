@@ -3,6 +3,8 @@
 session_start();
 require "controler/controler.php";
 
+$category = "2";
+
 if (isset($_GET['action'])) {
     $action = $_GET['action'];
     switch ($action) {
@@ -40,7 +42,7 @@ if (isset($_GET['action'])) {
             viewMore($_GET['max']);
             break;
         case 'searching':
-            searching($_GET['search']);
+            searching($_GET['search'], $category);
             break;
         default:
             home();
