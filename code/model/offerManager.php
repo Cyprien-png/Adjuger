@@ -56,7 +56,10 @@ function insertImages($images)
     return $imagesLink;
 }
 
-
+/**
+ * @description Read every offers in json file.
+ * @return array Returns an array with every offers.
+ * */
 function showOffers()
 {
     $ENCODED = file_get_contents("data/offers.json");
@@ -69,6 +72,12 @@ function showOffers()
     return $offersItmes;
 }
 
+/**
+ * @description Read every offers in json file
+ * @param $type int it would filter offers by type of information (ex : Title, description, category)
+ * @param $key string the thing would be searched in offers
+ * @return array Returns the numbers from verifyRegister().
+ * */
 function showSearch($key, $type)
 {
     $ENCODED = file_get_contents("data/offers.json");
@@ -86,6 +95,11 @@ function showSearch($key, $type)
                 if ($item->category == $key) {
                     array_push($offersItmes, $item);
                 }
+                break;
+            case 3:
+                    if (stripos($item->title, $key)!== FALSE || stripos($item->category, $key)!== FALSE || stripos($item->description, $key)!== FALSE) {
+                        array_push($offersItmes, $item);
+                    }
                 break;
         }
     }

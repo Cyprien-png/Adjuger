@@ -3,7 +3,9 @@
 session_start();
 require "controler/controler.php";
 
-$category = "2";
+//This variabes are usefull for searching some offers.. it would filter offers by type of information (ex : Title, description, category)
+$category = 2;
+$all = 3;
 
 if (isset($_GET['action'])) {
     $action = $_GET['action'];
@@ -43,6 +45,9 @@ if (isset($_GET['action'])) {
             break;
         case 'searching':
             searching($_GET['search'], $category);
+            break;
+        case 'barSearch':
+            searching($_POST['searchingBar'], $all);
             break;
         default:
             home();

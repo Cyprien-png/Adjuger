@@ -51,8 +51,8 @@
 
       <div class="collapse navbar-collapse" id="navbarCollapse">
 
-        <form class="form-inline my-2 my-lg-0 col-8 col-sm-10 col-md-6 col-lg-6">
-          <input class="form-control col-12 col-sm-7 col-md-7 col-lg-7" type="search" placeholder="Rechercher" aria-label="Search">
+        <form method="POST" action="index.php?action=barSearch" class="form-inline my-2 my-lg-0 col-8 col-sm-10 col-md-6 col-lg-6">
+          <input name="searchingBar" class="form-control col-12 col-sm-7 col-md-7 col-lg-7" type="search" placeholder="Rechercher" aria-label="Search">
           <button class="btn btn-outline-success my-2 my-sm-0 col-6 col-sm-3 col-md-5  col-lg-4" type="submit">Chercher</button>
         </form>
         <div class="navbar-nav col-3 col-sm-5 col-md-5 col-lg-5">
