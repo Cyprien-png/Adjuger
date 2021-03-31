@@ -155,7 +155,13 @@ function showProduct($offerId) {
     $j=0;
     require_once "model/offerManager.php";
     $offerData = getOfferById($offerId);
-    require "view/product.php";
+    if ($offerData == false) {
+        home();
+    }
+    else {
+        require "view/product.php";
+    }
+
 }
 
 function viewMore($max){

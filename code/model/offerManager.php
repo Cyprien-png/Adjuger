@@ -5,7 +5,7 @@
  * @description Calls all the needed functions to insert the user data into the json offers file.
  * @param $offerData array The POST data from the register form.
  * @param $offerImages array The POST data from the register form.
- * @param $offerImages string ID of the offer if we want a specific one.
+ * @param $offerId string ID of the offer if we want a specific one.
  * @return int Returns the numbers from verifyRegister().
  * */
 function addOfferDB($offerData, $offerImages, $offerId = null)
@@ -19,6 +19,11 @@ function addOfferDB($offerData, $offerImages, $offerId = null)
     return $success;
 }
 
+/**
+ * @description Saves the image(s) chose in the addOffer form.
+ * @param $images array The $_FILES global variable witch contains the images added in the form
+ * @return array An array with the link of the new images.
+ * */
 function insertImages($images)
 {
     $imagesLink = array();
@@ -106,12 +111,25 @@ function showSearch($key, $type)
     return $offersItmes;
 }
 
+/**
+ * @description Deletes the old offer and creates a new one but with the same ID
+ * @param $newData array The POST data from the modify form.
+ * @param $images array The $_FILES variable witch contains the new images from the modification form.
+ * @param $offerId string ID of the offer we want to modify.
+ * */
 function modifyOfferDB($newData, $images, $offerId)
 {
     deleteOfferDB($offerId, true);
     addOfferDB($newData, $images, $offerId);
 }
 
+/**
+ * @description Prepares the array to be inserted into the file. Creates an ID for it. Puts in the links of the images.
+ * @param $offerData array The POST data from a form.
+ * @param $offerImages array The $_FILES variable witch contains the new images from the modification form.
+ * @param $offerId string A specific ID if we want to use one.
+ * @return array The cleaned up array.
+ * */
 function prepareOfferArray($offerData, $offerImages, $offerId = null)
 {
     if (isset($offerId)) {
@@ -163,20 +181,39 @@ function insertOffer($data, $file)
     }
 }
 
+/**
+ * @description Gets the content of the offer corresponding to the id
+ * @param $id string The id of the offer.
+ * @return array|bool $exists mixed  if the file writing succeeds or false if it fails.
+ */
 function getOfferById($id)
 {
+    $exists = false;
     $db = file_get_contents("data/offers.json");
     $json = json_decode($db, false);
 
     foreach ($json->offers as $item) {
         if ($item->id == $id) {
+            $exists = true;
             $data = (array)$item;
             break;
         }
     }
-    return $data;
+    if($exists == false) {
+        return false;
+    }
+    else {
+        return $data;
+    }
+
 }
 
+/**
+ * @description Deletes an offer by searching the corresponding id
+ * @param $offerId string The id of the offer.
+ * @param $noImageDel bool False to erase the image of the offer, true to not erase it.
+ * @return bool True if the deleting worked, false if it didn't
+ */
 function deleteOfferDB($offerId, $noImageDel = false)
 {
     $db = file_get_contents("data/offers.json");
