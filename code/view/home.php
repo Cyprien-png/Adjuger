@@ -80,7 +80,9 @@ ob_start();
                     </div>
                 <?php if($count==$max)break; ?>
             <?php endforeach; ?>
+            <?php if(!isset($home)):?>
             <a href="index.php?action=viewMore&max=<?=$max?>" class=" container"><button id="btnPlus" class="button-style btn btn-outline-success nav-item nav-link">Afficher plus</button></a>
+            <?php endif?>
             </div>
             <!-- /.row -->
 

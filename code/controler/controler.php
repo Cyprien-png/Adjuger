@@ -10,8 +10,9 @@ function home() {
 
 function homeSearch($search) {
     require_once "model/offerManager.php";
+    $home =0;
     $count = 0;
-    $max = 6;
+    $max = 6000;
     $items = $search;
     require "view/home.php";
 }
