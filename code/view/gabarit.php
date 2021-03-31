@@ -64,7 +64,7 @@
             <td>
               <?php if (isset($_SESSION['userLog'])) : ?>
                 <a href="index.php?action=user" class="navbar-brand">
-                  <img src="/view/content/images/user_icon.png" height="28" alt="Adjuger">
+                  <img src="view/content/images/user_icon.png" height="28" alt="">
                 </a>
               <td ><p style="margin-bottom: 0;"><?=$_SESSION['username']?></p></td>
                

@@ -20,7 +20,7 @@ ob_start();
 
         <p>E-Mail : <?php echo $email; ?></p>
 
-        <a href="/index.php?action=logout" class="nav-item nav-link ">Déconnexion</a>
+        <a href="index.php?action=logout" class="nav-item nav-link ">Déconnexion</a>
     </div>
     <br>
 
