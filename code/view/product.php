@@ -1,4 +1,4 @@
-<?php
+    <?php
 $title = "Annonce";
 ob_start();
 ?>
@@ -32,7 +32,7 @@ ob_start();
                         <?php else : ?>
                             <div class="carousel-item" >
                             <?php endif; ?>
-                            <img class="d-block img-fluid images-content" src='<?= $image ?>' alt="Slide <?= $i ?>">
+                            <img class="d-block img-fluid images-content" src='<?= htmlspecialchars($image) ?>' alt="Slide <?= $i ?>">
                             </div>
                         <?php endforeach; ?>
                         <br><br><br><br><br><br>
@@ -58,7 +58,7 @@ ob_start();
             <div class="text-content">
                 <br>
                 <h1><?=htmlspecialchars($offerData['title'])?></h1>
-                <p><b>Prix :</b> <?= $offerData['price'] ?> CHF</p>
+                <p><b>Prix :</b> <?= htmlspecialchars($offerData['price']) ?> CHF</p>
                 <!-- Big description text area-->
                 <p><b>Description :</b> <?= htmlspecialchars($offerData['description']) ?></p>
                 <!--/ Big description text area-->
@@ -68,8 +68,8 @@ ob_start();
 
         <div class="text-content col-lg-4 col-md-6 mb-4">
             <p><b>Annonceur :</b> <?=htmlspecialchars($offerData['email'])?></p>
-            <p><b>Type :</b> <?= $offerData['type'] ?></p>
-            <p><b>Catégorie :</b> <?= $offerData['category'] ?></p>
+            <p><b>Type :</b> <?= htmlspecialchars($offerData['type']) ?></p>
+            <p><b>Catégorie :</b> <?= htmlspecialchars($offerData['category']) ?></p>
             <p><b>Ajouté le :</b> <?= $offerData['date'] ?></p>
         </div>
 

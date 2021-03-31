@@ -35,7 +35,7 @@
 
     <div class="container row">
       <div class=" col-3 col-sm-2 col-md-1 col-lg-1">
-        <a href="/index.php?action=home" class="navbar-brand">
+        <a href="index.php?action=home" class="navbar-brand">
           <img src="view/content/images/Logo.svg" height="28" alt="Adjuger">
         </a>
       </div>
@@ -57,20 +57,20 @@
         </form>
         <div class="navbar-nav col-3 col-sm-5 col-md-5 col-lg-5">
           <table class="container">
-            <td><a href="/index.php?action=home" class="nav-item nav-link active">Accueil</a></td>
+            <td><a href="index.php?action=home" class="nav-item nav-link active">Accueil</a></td>
             <?php if(isset($_SESSION['email'])) :?>
               <td><a href="index.php?action=addOffer" class="nav-item nav-link  ">Ajouter</a></td>
             <?php endif;?>
             <td>
               <?php if (isset($_SESSION['userLog'])) : ?>
-                <a href="/index.php?action=user" class="navbar-brand">
+                <a href="index.php?action=user" class="navbar-brand">
                   <img src="/view/content/images/user_icon.png" height="28" alt="Adjuger">
                 </a>
               <td ><p style="margin-bottom: 0;"><?=$_SESSION['username']?></p></td>
                
                 <!-- img-fluid -->
               <?php else : ?>
-                <a href="/index.php?action=login" class="nav-item nav-link ">Connexion</a>
+                <a href="index.php?action=login" class="nav-item nav-link ">Connexion</a>
               <?php endif; ?>
             </td>
           </table>
