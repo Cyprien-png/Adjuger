@@ -77,7 +77,7 @@ ob_start();
         </form>
 
         <?php if (isset($registerErr)) : ?>
-            <h3><?= $registerErr ?></h3>
+            <p style="color:red;"><?= $registerErr ?></p>
         <?php endif; ?>
 
         <br><br>

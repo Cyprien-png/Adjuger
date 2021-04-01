@@ -33,7 +33,7 @@ ob_start();
 
             </form>
         <?php if (isset($loginErr)) : ?>
-            <h3><?= $loginErr ?></h3>
+            <p style="color:red;"><?= $loginErr ?></p>
         <?php endif; ?>
         <br><br>
         <p>Pas de compte ? <a href="index.php?action=register">S'inscrire</a></p>
