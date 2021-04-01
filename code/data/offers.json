@@ -1,32 +1,5 @@
 {
     "offers": {
-        "1": {
-            "id": "124",
-            "title": "jardinier",
-            "description": "Je vous arrange vos jardins",
-            "email": "Benjamin.muminovic@cpnv.ch",
-            "price": "550",
-            "date": "22.03.2021",
-            "images": [
-                "data\/images\/offers\/test1.jpg",
-                "data\/images\/offers\/test.jpg"
-            ],
-            "type": "service",
-            "category": "Maison"
-        },
-        "3": {
-            "id": "123",
-            "title": "Photographe",
-            "email": "Cyprien.jaquier@cpnv.ch",
-            "username": "Cyprien",
-            "price": "450",
-            "date": "29.03.2021",
-            "description": "Je vous fait des shootings",
-            "images": [
-                "view\/content\/images\/noPhoto.png"
-            ],
-            "type": "service",
-            "category": "Electronique"
-        }
+
     }
 }
